@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
         <title>{% block title %}Welcome!!!!!!!!!!!!!!!!!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+            <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+                <div class="navbar-menu is-active">
+                    <div class="navbar-start">
+                        <a class="navbar-item">Ansel Clément</a>
+                    </div>
+                    <div class="navbar-end">
+                        <a class="navbar-item">
+                            <i class="fas fa-home"></i>
+                        </a>
+                        <a class="navbar-item">A propos</a>
+                        <a class="navbar-item">Compétences</a>
+                        <a class="navbar-item">Expériences/Diplômes</a>
+                        <a class="navbar-item">Portfolio</a>
+                        <a class="navbar-item">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
