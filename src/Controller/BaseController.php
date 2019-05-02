@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class HomepageController extends AbstractController
+class BaseController extends AbstractController
 {
     /**
      * @Route("/")
