@@ -3,3 +3,10 @@
 @import "variable.scss";
 @import "introduction.scss";
 @import "menuNavigation.scss";
+@import "responsive.scss";
+
+@import url('https://fonts.googleapis.com/css?family=Rosario');
+
+body {
+    font-family: 'Rosario', sans-serif;
+}

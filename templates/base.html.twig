@@ -17,15 +17,15 @@
             <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
                 <div class="container">
                     <div class="navbar-brand">
-                        <h1 class="title is-2"><a href="#" class="navbar-item" id="logo">Clément Ansel</a></h1>
+                        <img class="navbar-item" id="logo" src="{{ asset('static/logo.png') }}" alt="logo">
                         <span class="navbar-burger burger" data-target="navMenu">
                             <span></span>
                             <span></span>
                             <span></span>
                         </span>
                     </div>
-                    <div id="navMenu" class="navbar-menu">
-                        <div class="navbar-end">
+                    <div id="navMenu" class="navbar-menu has-text-centered">
+                        <div class="navbar-end ">
                             <a href="#" class="navbar-item">
                                 <i class="fas fa-home"></i>
                             </a>
@@ -39,9 +39,18 @@
                 </div>
             </nav>
         </header>
-        <section id="intro"></section>
-        <a class="button button-color">Primary</a>
+        <section id="intro">
+            <div class="container">
+                    <div class="container has-text-centered">
+                        <div id="zoom">
+                            <h2 class="title is-1">Développeur Web</h2>
+                            <button class="button is-primary is-large">Découvrir</button>
+                        </div>
+                    </div>  
+            </div>
+        </section>
         {% endblock %}
+
         {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
         {% endblock %}

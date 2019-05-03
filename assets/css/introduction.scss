@@ -8,13 +8,24 @@
     width: 100%;
     height: 100vh;
     align-items: center;
-    -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    perspective: 1000px;
+    perspective-origin: center;
 }
 
-#intro:hover {
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
+#test.container{
+    position: absolute;
+}
+
+#zoom{
+    animation-name: zoomin;
+    animation-duration: 4s;
+}
+
+@keyframes zoomin {
+    0% {transform: translateZ(-5000px)}
+    100% {transform: translateZ(0px)}
+}
+
+.title.is-1{
+    color: white;
 }
