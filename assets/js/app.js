@@ -23,3 +23,6 @@ console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
         nav.classList.toggle('is-active');
     });
 })();
+
+const imagesContext = require.context('../images', true, /\.(png|jpg|jpeg|gif|ico|svg|webp)$/);
+imagesContext.keys().forEach(imagesContext);
