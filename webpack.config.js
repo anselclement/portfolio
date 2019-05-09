@@ -38,6 +38,9 @@ Encore
      */
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
+    .addPlugin(new CopyWebpackPlugin([
+        {from:'./assets/images', to:'images'}
+    ]))
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)
     .enableVersioning(Encore.isProduction())
@@ -65,18 +68,9 @@ Encore
     //.enableReactPreset()
     //.addEntry('admin', './assets/js/admin.js')
 
-    .configureFilenames({
-        images: '[path][name].[hash:8].[ext]',
-        })
 ;
 
-module.exports =  {
-    plugins: [
-        new CopyWebpackPlugin([
-            {from:'assets/images',to:'images'}
-        ]),
-    ];
-    Encore.getWebpackConfig();
-}
+module.exports = Encore.getWebpackConfig(); 
+
 
 
