@@ -2,12 +2,6 @@
 @import "variable.scss";
 @import "introduction.scss";
 @import "menuNavigation.scss";
-@import "../../node_modules/bulma/bulma.sass";
+@import "../../../node_modules/bulma/bulma.sass";
 
 @import url('https://fonts.googleapis.com/css?family=Rosario');
-
-body {
-    font-family: 'Rosario', sans-serif;
-    margin: 0;
-    padding: 0;
-}
