@@ -1,9 +1,49 @@
-.section{
+.section.propos{
 
     .container{
 
         .title{
             margin-bottom: 15px;
         }
+    }
+
+    .container{
+        margin-bottom: 15px;
+    }
+
+    .container{
+        padding-top: 15px;
+        .columns{
+
+            .column.is-2{
+
+                #avatar{
+                    border: solid;
+                    @media screen and (max-width: 768px){
+                        margin: auto;
+                    }
+                }
+            }
+
+            .column.is-5{
+                
+                .columns{
+
+                    .column.is-2{
+                        @media screen and (max-width: 768px){
+                            margin: auto;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    #mail{
+        text-align: center;
     }
 }
