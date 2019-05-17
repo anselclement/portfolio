@@ -1,4 +1,50 @@
-function fetchJson(url, options) {
+/**
+ * Returns a promise where the data is the rep log collection
+ *
+ * @return {Promise<Response>}
+*/
+export function getAPropos() {
+    return fetch('/dashboard/AproposJSON')
+    .then(response => {
+        return response.json();
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function fetchJson(url, options) {
     return fetch(url, Object.assign({
         credentials: 'same-origin',
     }, options))
@@ -19,16 +65,7 @@ function checkStatus(response) {
 
     throw error
 }
-/*
-/**
- * Returns a promise where the data is the rep log collection
- *
- * @return {Promise<Response>}
 
-export function getRepLogs() {
-    return fetchJson('/reps')
-        .then(data => data.items);
-}
 
 export function deleteRepLog(id) {
     return fetchJson(`/reps/${id}`, {
@@ -36,10 +73,10 @@ export function deleteRepLog(id) {
     });
 }
 
-export function createRepLog(repLog) {
-    return fetchJson('/reps', {
+export function createAPropos(aPropos) {
+    return fetchJson('/dashboard/Apropos', {
         method: 'POST',
-        body: JSON.stringify(repLog),
+        body: JSON.stringify(aPropos),
         headers: {
             'Content-Type': 'application/json'
         }
