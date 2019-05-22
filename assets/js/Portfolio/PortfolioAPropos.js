@@ -4,10 +4,13 @@ import PropTypes from 'prop-types';
 export default function PortfolioAPropos(props) {
 
     const avatar = require('../../images/myAvatar.png');
+    
     const {
         aPropos
     } = props;
+
     console.log(aPropos)
+
     return (
         <section className="section propos">
             <div className="container">

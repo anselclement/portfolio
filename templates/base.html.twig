@@ -11,13 +11,14 @@
             <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
         {% endblock %}
     </head>
+
     <body>
-        {% block body %}
+
         <header>
             <nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
                 <div class="container">
                     <div class="navbar-brand">
-                        <img class="navbar-item logo" src="{{ asset('build/images/logo.png') }}" alt="logo">
+                        <a href="{{ path('homepage') }}"><img class="navbar-item logo" src="{{ asset('build/images/logo.png') }}" alt="logo"></a>
                     </div>
                     <div class="navbar-menu has-text-centered">
                         <div class="navbar-end">
@@ -50,6 +51,9 @@
                 </div>
             </nav>
         </header>
+
+        {% block body %}
+
         <section id="intro">
             <div class="intro-overlay"></div>
             <div class="container has-text-centered">
@@ -59,13 +63,15 @@
                 </div>
             </div>
         </section>
-        <section id="main">
-        </section>
+
+        <section id="main"></section>
+
         {% endblock %}
 
         {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
         {{ encore_entry_script_tags('portfolio_react') }}
         {% endblock %}
+
     </body>
 </html>

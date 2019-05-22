@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,6 +12,6 @@ class AdminController extends AbstractController
      */
     public function view()
     {
-        return $this->render('dashboard.html.twig', []);
+        return $this->render('admin/dashboard.html.twig', []);
     }
 }

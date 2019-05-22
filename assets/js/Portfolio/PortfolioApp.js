@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioAPropos from './PortfolioAPropos';
-import { getAPropos, createAPropos } from '../api/portfolio_api';
+import { getAPropos } from '../api/portfolio_api';
 
 
 export default class PortfolioApp extends Component {
