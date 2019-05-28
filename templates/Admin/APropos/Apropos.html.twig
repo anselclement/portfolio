@@ -5,6 +5,9 @@
 {% block body %}
     <div class="container" style="margin-top: 150px">
         <h1 class="title is-2">Bienvenue sur la Section A Propos</h1>
+        {% for apropos in apropos %}
+        <a href="{{ path('aProposAdmin.edition', {id: apropos.id}) }}" class="button is-primary">Edition</a>
+        {% endfor %}
         <table class="table">
             <thead>
             <tr>
@@ -13,12 +16,6 @@
             </tr>
             </thead>
             </tbody>
-            {% for apropos in apropos %}
-            <tr>
-                <td>{{ apropos.content }}</td>
-                <td><a href="{{ path('aProposAdmin.edition', {id: apropos.id}) }}" class="button is-primary">Edition</a></td>
-            </tr>
-            {% endfor %}
             </tbody>
         </table>
     </div>

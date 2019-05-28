@@ -64,17 +64,6 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route ("/dashboard/Apropos/{id}", name="aProposAdmin.edition", methods="DELETE")
-     * @param APropos $apropos
-    */ 
-    public function delete(APropos $apropos)
-    {
-        $this->em->remove($apropos);
-        $this->em->flush();
-        return $this->redirectToRoute('aProposAdmin');
-    }
-
-    /**
      * @Route("dashboard/AproposJSON", methods={"GET"})
      */
     public function transformFormatJson(AProposRepository $aProposRepository, SerializerInterface $serializer){

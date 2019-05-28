@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function PortfolioAPropos(props) {
 
-    const avatar = require('../../images/myAvatar.png');
+    const root = '../build/images/';
     
     const {
         aPropos
@@ -23,16 +23,20 @@ export default function PortfolioAPropos(props) {
                 <div className="columns">
                     <div className="column is-2">
                         <figure className="image is-128x128" id="avatar">
-                            <img src={require('../../images/myAvatar.png')} alt="avatar"/>
+                        {aPropos.map(data => (
+                                <img src={root + data.filename}   alt="avatar"/>
+                            ))}
                         </figure>
                     </div>
                     <div className="column is-5">
                         <div className="columns is-mobile">
-                            <div className="column" id="mail">clement.ansel14@gmail.com</div>
+                        {aPropos.map(data => (
+                            <div className="column" id="mail">{data.mail}</div>
+                        ))}
                         </div>
                         <div className="columns is-mobile">
-                            <div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fab fa-linkedin"></i></button></div>
-                            <div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fab fa-github-square"></i></button></div>
+                            <a target="_blank" href="https://www.linkedin.com/in/cl%C3%A9ment-ansel-376584142/%7Bcountry%3Dus%2C+language%3Den%7D?trk=people-guest_profile-result-card_result-card_full-click"><div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fab fa-linkedin"></i></button></div></a>
+                            <a target="_blank" href="https://github.com/anselclement"><div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fab fa-github-square"></i></button></div></a>
                             <div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fas fa-file-pdf"></i></button></div>
                         </div>
                         <div className="columns">
