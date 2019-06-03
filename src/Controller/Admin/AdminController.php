@@ -8,10 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminController extends AbstractController
 {
     /**
-     * @Route("/dashboard")
+     * @Route("/admin")
      */
     public function view()
     {
-        return $this->render('admin/dashboard.html.twig', []);
+        return $this->render('Admin/admin.html.twig', []);
     }
 }

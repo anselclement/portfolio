@@ -43,7 +43,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route("/dashboard/Apropos", name="aProposAdmin")
+     * @Route("/admin/Apropos", name="aProposAdmin")
      */
     public function index()
     {
@@ -57,7 +57,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route ("/dashboard/Apropos/{id}", name="aProposAdmin.edition", methods="GET|POST")
+     * @Route ("/admin/Apropos/{id}", name="aProposAdmin.edition", methods="GET|POST")
      * @param APropos $apropos
      * @param Request $request
      */
@@ -80,7 +80,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     *@Route ("/dashboard/Apropos/{id}/createhobbies", name="aProposAdmin.createhobbies")
+     *@Route ("/admin/Apropos/{id}/createhobbies", name="aProposAdmin.createhobbies")
      */
     public function newHobbies(Request $request, APropos $apropos)
     {
@@ -103,7 +103,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     *@Route ("/dashboard/Apropos/edithobbies/{id}", name="aProposAdmin.edithobbies", methods="GET|POST")
+     *@Route ("/admin/Apropos/edithobbies/{id}", name="aProposAdmin.edithobbies", methods="GET|POST")
      */
     public function editHobbies(Hobbies $hobbies, Request $request)
     {
@@ -123,7 +123,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route ("/dashboard/Apropos/edithobbies/{id}", name="aProposAdmin.deletehobbies", methods="DELETE")
+     * @Route ("/admin/Apropos/edithobbies/{id}", name="aProposAdmin.deletehobbies", methods="DELETE")
      */
     public function deleteHobbies(Hobbies $hobbies)
     {
@@ -134,7 +134,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route("dashboard/AproposJSON", methods={"GET"})
+     * @Route("admin/AproposJSON", methods={"GET"})
      */
     public function transformFormatJson(AProposRepository $aProposRepository, SerializerInterface $serializer){
 
@@ -155,7 +155,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route("dashboard/hobbiesJSON", methods={"GET"})
+     * @Route("admin/hobbiesJSON", methods={"GET"})
      */
     public function transformHobbiesFormatJson(HobbiesRepository $hobbiesRepository, SerializerInterface $serializer){
 
