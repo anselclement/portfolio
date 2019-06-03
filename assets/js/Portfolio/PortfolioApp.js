@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioAPropos from './PortfolioAPropos';
-import { getAPropos } from '../api/portfolio_api';
+import { getAPropos, getHobbies } from '../api/portfolio_api';
 
 
 export default class PortfolioApp extends Component {
@@ -11,7 +11,8 @@ export default class PortfolioApp extends Component {
         super(props);
 
         this.state = {
-            aPropos: []
+            aPropos: [],
+            hobbies: []
         };
     }
 
@@ -22,6 +23,12 @@ export default class PortfolioApp extends Component {
                     aPropos:data
                 })
             });
+        getHobbies()
+        .then((icon) => {
+            this.setState({
+                hobbies:icon
+            })
+        });
     }
     
     render() {

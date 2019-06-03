@@ -30,9 +30,17 @@ function checkStatus(response) {
 export function getAPropos() {
     return fetchJson('/dashboard/AproposJSON')
     .then(data => data)
-
 }
 
+/**
+ * Returns a promise where the data is the rep log collection
+ *
+ * @return {Promise<Response>}
+*/
+export function getHobbies() {
+    return fetchJson('/dashboard/hobbiesJSON')
+    .then(icon => icon)
+}
 
 
 

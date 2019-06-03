@@ -3,14 +3,15 @@ import PropTypes from 'prop-types';
 
 export default function PortfolioAPropos(props) {
 
-    const root = '../build/images/';
+    const root = '../uploads/';
+    const fontAwesome = 'fas fa-';
+    const zoomFontAwesome = ' fa-2x';
     
     const {
-        aPropos
+        aPropos,
+        hobbies
     } = props;
-
-    console.log(aPropos)
-
+    console.log(hobbies);
     return (
         <section className="section propos">
             <div className="container">
@@ -35,8 +36,8 @@ export default function PortfolioAPropos(props) {
                         ))}
                         </div>
                         <div className="columns is-mobile">
-                            <a target="_blank" href="https://www.linkedin.com/in/cl%C3%A9ment-ansel-376584142/%7Bcountry%3Dus%2C+language%3Den%7D?trk=people-guest_profile-result-card_result-card_full-click"><div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fab fa-linkedin"></i></button></div></a>
-                            <a target="_blank" href="https://github.com/anselclement"><div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fab fa-github-square"></i></button></div></a>
+                            <div className="column is-2 has-text-centered"><a target="_blank" href="https://www.linkedin.com/in/cl%C3%A9ment-ansel-376584142/%7Bcountry%3Dus%2C+language%3Den%7D?trk=people-guest_profile-result-card_result-card_full-click"><button className="button is-rounded is-info"><i className="fab fa-linkedin"></i></button></a></div>
+                            <div className="column is-2 has-text-centered"><a target="_blank" href="https://github.com/anselclement"><button className="button is-rounded is-info"><i className="fab fa-github-square"></i></button></a></div>
                             <div className="column is-2 has-text-centered"><button className="button is-rounded is-info"><i className="fas fa-file-pdf"></i></button></div>
                         </div>
                         <div className="columns">
@@ -50,24 +51,12 @@ export default function PortfolioAPropos(props) {
                             </div>
                         </div>
                         <div className="columns is-mobile">
-                            <div className="column is-2">
-                                <i className="fas fa-film fa-2x"></i>
-                            </div>
-                            <div className="column is-2">
-                                <i className="fas fa-gamepad fa-2x"></i>
-                            </div>
-                            <div className="column is-2">
-                                <i className="fas fa-book fa-2x"></i>
-                            </div>
-                            <div className="column is-2">
-                                <i className="fas fa-utensils fa-2x"></i>
-                            </div>
-                            <div className="column is-2">
-                                <i className="fas fa-mobile-alt fa-2x"></i>
-                            </div>
-                            <div className="column is-2">
-                                <i className="fas fa-bicycle fa-2x"></i>
-                            </div>
+                            {hobbies.map(icon => (
+                                <div className="column is-2 has-text-centered tooltip">
+                                    <i className={fontAwesome + icon.iconName + zoomFontAwesome}></i>
+                                    <div className="tooltiptext ">{icon.name}</div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>

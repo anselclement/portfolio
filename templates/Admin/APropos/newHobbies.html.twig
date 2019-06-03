@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Nouvel hobbie' %}
+
+{% block body %}
+    <div class="container" style="margin-top: 150px">
+        <h1 class="title is-2">New</h1>
+        {{ form_start(formhobbies) }}
+            {{ form_row(formhobbies.name) }}
+            {{ form_row(formhobbies.icon_name) }}
+            <button class="button is-primary">Créer</button>
+        {{ form_end(formhobbies) }}
+    </div>
+{% endblock %}

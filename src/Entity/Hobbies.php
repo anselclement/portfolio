@@ -17,14 +17,20 @@ class Hobbies
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $icon_name;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\APropos", inversedBy="hobbies")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $apropos;
 
     public function getId(): ?int
     {
@@ -51,6 +57,18 @@ class Hobbies
     public function setName(?string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getApropos(): ?APropos
+    {
+        return $this->apropos;
+    }
+
+    public function setApropos(?APropos $apropos): self
+    {
+        $this->apropos = $apropos;
 
         return $this;
     }

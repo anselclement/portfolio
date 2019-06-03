@@ -56,3 +56,27 @@
         background: no-repeat;
     }
 }
+
+.columns.is-mobile {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.tooltiptext{
+    width: 100%;
+    background-color: $dark;
+    color: whitesmoke;
+    font-size: 12px;
+    font-weight: bold;
+    bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 7px;
+    visibility: hidden;
+}
+
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
