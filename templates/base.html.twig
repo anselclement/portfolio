@@ -30,6 +30,9 @@
                             <a href="#" class="navbar-item">Expériences/Diplômes</a>
                             <a href="#" class="navbar-item">Portfolio</a>
                             <a href="#" class="navbar-item">Contact</a>
+                            {% if app.user %}
+                                <a href="{{ path('logout') }}" class="navbar-item">déconnexion</a>
+                            {% endif %}
                         </div>
                     </div>
                     <div id="MenuIcon">
@@ -45,6 +48,9 @@
                             <li>Expériences/Diplômes<div href="#" class="line"></div></li>
                             <li>Portfolio<div href="#" class="line"></div></li>
                             <li>Contact<div href="#" class="line"></div></li>
+                            {% if app.user %}
+                                <li>déconnexion<div href="{{ path('logout') }}" class="line"></div></li>
+                            {% endif %}
                         </ul>
                         <div id="close"><i class="far fa-times-circle fa-3x"></i></div>
                     </div>

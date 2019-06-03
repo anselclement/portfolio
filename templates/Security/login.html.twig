@@ -4,10 +4,19 @@
 
 {% block body %}
     <div class="container">
+
+        {% if error %}
+        <div class="notification is-danger" style="margin-top: 150px">
+            <button class="delete"></button>
+            {{ error.messageKey | trans(error.messagedata, 'security') }}
+        </div>
+        {% endif %}
+
         <form action="{{ path('login') }}" method="post" style="margin-top: 150px">
+            <label for="username" class="label">Nom d'utilisateur</label>
             <div class="field">
                 <p class="control has-icons-left has-icons-right">
-                    <input class="input" type="text" id="username" name="_username" placeholder="Nom d'utilisateur">
+                    <input class="input" type="text" id="username" name="_username" placeholder="Nom d'utilisateur" value="{{ last_username }}">
                     <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                     </span>
@@ -16,6 +25,7 @@
                     </span>
                 </p>
             </div>
+            <label for="password" class="label">Password</label>
             <div class="field">
                 <p class="control has-icons-left">
                     <input class="input" type="password" id="password" name="_password" placeholder="Password">

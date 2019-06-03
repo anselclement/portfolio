@@ -134,7 +134,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route("admin/AproposJSON", methods={"GET"})
+     * @Route("/AproposJSON", methods={"GET"})
      */
     public function transformFormatJson(AProposRepository $aProposRepository, SerializerInterface $serializer){
 
@@ -155,7 +155,7 @@ class AProposController extends AbstractController
     }
 
     /**
-     * @Route("admin/hobbiesJSON", methods={"GET"})
+     * @Route("/hobbiesJSON", methods={"GET"})
      */
     public function transformHobbiesFormatJson(HobbiesRepository $hobbiesRepository, SerializerInterface $serializer){
 

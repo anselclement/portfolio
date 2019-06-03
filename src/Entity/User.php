@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User implements UserInterface, \Serializable
+class User implements UserInterface,\Serializable
 {
     /**
      * @ORM\Id()
@@ -56,11 +56,17 @@ class User implements UserInterface, \Serializable
         return $this;
     }
 
+    /**
+     * @return (Role|string)[] The user roles
+     */
     public function getRoles()
     {
         return ['ROLE_ADMIN'];
     }
 
+    /***
+     * @return string|null The salt
+     */
     public function getSalt()
     {
         return null;

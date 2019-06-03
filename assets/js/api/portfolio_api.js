@@ -28,7 +28,7 @@ function checkStatus(response) {
  * @return {Promise<Response>}
 */
 export function getAPropos() {
-    return fetchJson('/admin/AproposJSON')
+    return fetchJson('/AproposJSON')
     .then(data => data)
 }
 
@@ -38,7 +38,7 @@ export function getAPropos() {
  * @return {Promise<Response>}
 */
 export function getHobbies() {
-    return fetchJson('/admin/hobbiesJSON')
+    return fetchJson('/hobbiesJSON')
     .then(icon => icon)
 }
 
