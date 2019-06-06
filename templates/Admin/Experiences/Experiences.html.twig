@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Experiences' %}
+
+{% block body %}
+    <div class="container" style="margin-top: 150px">
+        <h1 class="title is-2">Bienvenue sur la section Expériences</h1>
+        {% for message in app.flashes('succes') %}
+        <div class="notification is-success">
+            <button class="delete"></button>
+            {{ message }}
+        </div>
+        {% endfor %}
+
+        <table class="table" style="margin-top: 50px">
+                <h2 class="title is-3" style="margin-top: 50px">Liste Expériences</h2>
+                <thead>
+                <tr>
+                    <th>Période</th>
+                    <th>Description</th>
+                </tr>
+                </thead>
+                </tbody>
+                {% for experiences in experiences %}
+                <tr>
+                    <td>{{ experiences.period }}</td>
+                    <td>{{ experiences.description }}</td>
+                    <td><a href="{{ path('ExperiencesAdmin.editexperiences', {id: experiences.id}) }}" class="button is-primary">Edition</a></td>
+                    <td>
+                        <form method="post" action="{{ path('ExperiencesAdmin.deleteexperiences', {id: experiences.id}) }}">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button  class="button is-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            {% for experiences in experiences %}
+            <a href="{{ path('ExperiencesAdmin.createexperiences', {id: experiences.id}) }}" class="button is-primary">Nouvelle Experiences</a>
+            {% endfor %}
+    </div>
+
+{% endblock %}

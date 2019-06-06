@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Nouvelle Experiences' %}
+
+{% block body %}
+    <div class="container" style="margin-top: 150px">
+        <h1 class="title is-2">New</h1>
+        {{ form_start(formexperiences) }}
+            {{ form_row(formexperiences.Period) }}
+            {{ form_row(formexperiences.description) }}
+            <button class="button is-primary">Créer</button>
+        {{ form_end(formexperiences) }}
+    </div>
+{% endblock %}

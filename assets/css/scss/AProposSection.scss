@@ -1,18 +1,6 @@
-.section.propos{
 
     .container{
 
-        .title{
-            margin-bottom: 15px;
-        }
-    }
-
-    .container{
-        margin-bottom: 15px;
-    }
-
-    .container{
-        padding-top: 15px;
         .columns{
 
             .column.is-2{
@@ -40,8 +28,6 @@
         }
     }
 
-}
-
 @media screen and (max-width: 768px){
     #mail{
         text-align: center;
@@ -63,20 +49,3 @@
 }
 
 
-.tooltiptext{
-    width: 100%;
-    background-color: $dark;
-    color: whitesmoke;
-    font-size: 12px;
-    font-weight: bold;
-    bottom: 0;
-    margin-top: 10px;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 7px;
-    visibility: hidden;
-}
-
-.tooltip:hover .tooltiptext{
-    visibility: visible;
-}

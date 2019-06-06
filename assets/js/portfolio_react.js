@@ -5,7 +5,6 @@ import PortfolioApp from './Portfolio/PortfolioApp.js';
 
 render(
     <PortfolioApp
-    {...window.REP_LOG_APP_PROPS}
     />,
     document.getElementById('main')
 );

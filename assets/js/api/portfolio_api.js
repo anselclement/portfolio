@@ -42,6 +42,25 @@ export function getHobbies() {
     .then(icon => icon)
 }
 
+/**
+ * Returns a promise where the data is the rep log collection
+ *
+ * @return {Promise<Response>}
+*/
+export function getCompetences() {
+    return fetchJson('/competencesJSON')
+    .then(competences => competences)
+}
+
+/**
+ * Returns a promise where the data is the rep log collection
+ *
+ * @return {Promise<Response>}
+*/
+export function getExperiences() {
+    return fetchJson('/experiencesJSON')
+    .then(experiences => experiences)
+}
 
 
 /*
