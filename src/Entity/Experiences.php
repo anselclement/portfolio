@@ -17,12 +17,17 @@ class Experiences
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="date", nullable=true)
      */
-    private $Period;
+    private $DateDebut;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="date", nullable=true)
+     */
+    private $DateFin;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $description;
 
@@ -31,14 +36,26 @@ class Experiences
         return $this->id;
     }
 
-    public function getPeriod(): ?string
+    public function getDateDebut(): ?\DateTimeInterface
     {
-        return $this->Period;
+        return $this->DateDebut;
     }
 
-    public function setPeriod(string $Period): self
+    public function setDateDebut(?\DateTimeInterface $DateDebut): self
     {
-        $this->Period = $Period;
+        $this->DateDebut = $DateDebut;
+
+        return $this;
+    }
+
+    public function getDateFin(): ?\DateTimeInterface
+    {
+        return $this->DateFin;
+    }
+
+    public function setDateFin(?\DateTimeInterface $DateFin): self
+    {
+        $this->DateFin = $DateFin;
 
         return $this;
     }
@@ -48,7 +65,7 @@ class Experiences
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 

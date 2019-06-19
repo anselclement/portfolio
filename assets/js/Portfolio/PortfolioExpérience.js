@@ -19,7 +19,7 @@ export default function PortfolioExperiences(props) {
                         <div className="timeline-item">
                             <div className="timeline-marker is-primary"></div>
                             <div className="timeline-content">
-                                <p className="heading"><strong>{experiences.Period}</strong></p>
+                                <p className="heading"><strong>{experiences.DateDebut}-{experiences.DateFin}</strong></p>
                                 <p>{experiences.description}</p>
                             </div>
                         </div>

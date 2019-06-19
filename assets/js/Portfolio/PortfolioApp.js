@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import PortfolioAPropos from './PortfolioAPropos';
 import PortfolioCompetences from './PortfolioCompetences';
-import { getAPropos, getHobbies, getCompetences, getExperiences } from '../api/portfolio_api';
 import PortfolioExperiences from './PortfolioExpérience';
+import PortfolioContact from './PortfolioContact';
+import { getAPropos, getHobbies, getCompetences, getExperiences } from '../api/portfolio_api';
+
 
 
 
@@ -52,17 +54,18 @@ export default class PortfolioApp extends Component {
         return (
             <React.Fragment>
                 <PortfolioAPropos
-                {...this.props}
-                {...this.state}
-            />
-            <PortfolioCompetences
-                {...this.props}
-                {...this.state}
-            />
-            <PortfolioExperiences
-                {...this.props}
-                {...this.state}
-            />
+                    {...this.props}
+                    {...this.state}
+                />
+                <PortfolioCompetences
+                    {...this.props}
+                    {...this.state}
+                />
+                <PortfolioExperiences
+                    {...this.props}
+                    {...this.state}
+                />
+                <PortfolioContact/>
             </React.Fragment>
         )
     }

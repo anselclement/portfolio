@@ -12,8 +12,8 @@ class HobbiesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('icon_name')
-            ->add('name')
+            ->add('icon_name', TextType::class)
+            ->add('name', TextType::class)
         ;
     }
 

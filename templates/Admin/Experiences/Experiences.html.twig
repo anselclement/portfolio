@@ -23,7 +23,8 @@
                 </tbody>
                 {% for experiences in experiences %}
                 <tr>
-                    <td>{{ experiences.period }}</td>
+                    <td>{{ experiences.DateDebut|date('m-Y') }}</td>
+                    <td>{{ experiences.DateFin|date('m-Y') }}</td>
                     <td>{{ experiences.description }}</td>
                     <td><a href="{{ path('ExperiencesAdmin.editexperiences', {id: experiences.id}) }}" class="button is-primary">Edition</a></td>
                     <td>

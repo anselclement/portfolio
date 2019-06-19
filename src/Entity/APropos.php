@@ -39,6 +39,8 @@ class APropos
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(
+     *      message = "Le contenu ne peut pas être vide !")
      */
     private $content;
 

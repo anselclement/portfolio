@@ -51,7 +51,7 @@ class ExperiencesController extends AbstractController
         $formexperiences = $this->createForm(ExperiencesType::class, $experiences);
         $formexperiences->handleRequest($request);
 
-        if($experiences->isSubmitted() && $formexperiences->isValid()) {
+        if($formexperiences->isSubmitted() && $formexperiences->isValid()) {
             $this->em->flush();
             $this->addFlash('succes', 'Modification bien enregistrées');
             return $this->redirectToRoute('ExperiencesAdmin');

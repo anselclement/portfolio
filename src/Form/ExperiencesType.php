@@ -6,14 +6,17 @@ use App\Entity\Experiences;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class ExperiencesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('Period')
-            ->add('description')
+            ->add('DateDebut', DateType::class)
+            ->add('DateFin', DateType::class)
+            ->add('description', TextType::class)
         ;
     }
 
