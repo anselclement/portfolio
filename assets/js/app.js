@@ -7,6 +7,7 @@
 
 // any CSS you require will output into a single css file (app.css in this case)
 require('../css/scss/styles.scss');
+import bulmaQuickview from '../../node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 const $ = require('jquery');
@@ -67,4 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
       $notification.parentNode.removeChild($notification);
     });
   });
+
+  var quickviews = bulmaQuickview.attach()
 });

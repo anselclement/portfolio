@@ -47,12 +47,14 @@ class AProposController extends AbstractController
      */
     public function index()
     {
-        $apropos = $this->repository->findAll();//Créer sa propre méthode pour avoir un seul résultat
+        $apropos = $this->repository->findAll();
         $allhobbies = $this->hobbiesRepository->findAll();
+        $aproposId = $this->repository->findAPropos();
 
         return $this->render('admin/APropos/Apropos.html.twig', [
             'apropos' => $apropos,
-            'hobbies' => $allhobbies
+            'hobbies' => $allhobbies,
+            'aproposId' => $aproposId
         ]);
     }
 

@@ -4,7 +4,8 @@ import PortfolioAPropos from './PortfolioAPropos';
 import PortfolioCompetences from './PortfolioCompetences';
 import PortfolioExperiences from './PortfolioExpérience';
 import PortfolioContact from './PortfolioContact';
-import { getAPropos, getHobbies, getCompetences, getExperiences } from '../api/portfolio_api';
+import PortfolioSite from './PortfolioSite';
+import { getAPropos, getHobbies, getCompetences, getExperiences, createMail, getPortfolio } from '../api/portfolio_api';
 
 
 
@@ -19,8 +20,12 @@ export default class PortfolioApp extends Component {
             aPropos: [],
             hobbies: [],
             competences: [],
-            experiences: []
+            experiences: [],
+            Mail: [],
+            portfolio: []
         };
+
+        this.handleNewMail = this.handleNewMail.bind(this);
     }
 
     componentDidMount() {
@@ -48,7 +53,34 @@ export default class PortfolioApp extends Component {
                 experiences:experiences
             })
         });
+        getPortfolio()
+        .then((portfolio) => {
+            this.setState({
+                portfolio:portfolio
+            })
+        });
     }
+
+    handleNewMail(nom, prenom, mail, message) {
+        const newMail = {
+            nom: nom,
+            prenom: prenom,
+            mail: mail,
+            message: message
+        };
+
+        createMail(newMail)
+            .then(mail => {
+                this.setState(prevState => {
+                    const newMailSend = [...prevState.newMailSend, mail];
+                    return {
+                        ...newState,
+                        Mail: newMailSend
+                    }
+                });
+            })
+    }
+
     
     render() {
         return (
@@ -65,7 +97,15 @@ export default class PortfolioApp extends Component {
                     {...this.props}
                     {...this.state}
                 />
-                <PortfolioContact/>
+                <PortfolioSite
+                    {...this.props}
+                    {...this.state}
+                />
+                <PortfolioContact
+                    {...this.props}
+                    {...this.state}
+                    onNewMail={this.handleNewMail}
+                />
             </React.Fragment>
         )
     }

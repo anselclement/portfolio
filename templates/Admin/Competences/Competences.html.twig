@@ -11,7 +11,7 @@
             {{ message }}
         </div>
         {% endfor %}
-
+        
         <table class="table" style="margin-top: 50px">
                 <h2 class="title is-3" style="margin-top: 50px">Liste Compétences</h2>
                 <thead>
@@ -37,10 +37,8 @@
                 </tr>
                 {% endfor %}
                 </tbody>
-            </table>
-            {% for competences in competences %}
-            <a href="{{ path('CompetencesAdmin.createcompetences', {id: competences.id}) }}" class="button is-primary">Nouvelle Compétences</a>
-            {% endfor %}
+        </table>
+        <a href="{{ path('CompetencesAdmin.createcompetences') }}" class="button is-primary">Nouvelle Compétences</a>
     </div>
 
 {% endblock %}

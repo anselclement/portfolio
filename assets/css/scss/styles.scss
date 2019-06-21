@@ -4,11 +4,13 @@
 @import "menuNavigation.scss";
 @import "AProposSection.scss";
 @import "CompetencesSection.scss";
+@import "AproposSite.scss";
 @import "../../../node_modules/bulma/bulma.sass";
 @import "../../../node_modules/react-circular-progressbar/dist/styles.css";
 @import '../../../node_modules/bulma-extensions/bulma-tooltip/dist/css/bulma-tooltip.sass';
 @import '../../../node_modules/bulma-extensions/bulma-timeline/dist/css/bulma-timeline.sass';
 @import '../../../node_modules/bulma-extensions/bulma-divider/dist/css/bulma-divider.sass';
+@import '../../../node_modules/bulma-extensions/bulma-quickview/dist/css/bulma-quickview.sass';
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
@@ -22,5 +24,9 @@
 }
 
 .columns.is-multiline.is-mobile.is-centered{
-    margin-top: 5rem;
+    margin-top: 3rem;
+}
+
+.section {
+    padding: 2rem 1.5rem;
 }

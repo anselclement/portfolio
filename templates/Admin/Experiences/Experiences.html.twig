@@ -37,9 +37,7 @@
                 {% endfor %}
                 </tbody>
             </table>
-            {% for experiences in experiences %}
-            <a href="{{ path('ExperiencesAdmin.createexperiences', {id: experiences.id}) }}" class="button is-primary">Nouvelle Experiences</a>
-            {% endfor %}
+            <a href="{{ path('ExperiencesAdmin.createexperiences') }}" class="button is-primary">Nouvelle Experiences</a>
     </div>
 
 {% endblock %}

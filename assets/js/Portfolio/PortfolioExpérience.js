@@ -16,10 +16,10 @@ export default function PortfolioExperiences(props) {
 
                 <div className="timeline is-centered">
                     {experiences.map(experiences => (
-                        <div className="timeline-item">
+                        <div className="timeline-item" key={experiences.id}>
                             <div className="timeline-marker is-primary"></div>
                             <div className="timeline-content">
-                                <p className="heading"><strong>{experiences.DateDebut}-{experiences.DateFin}</strong></p>
+                                <p className="heading" ><strong>{experiences.DateDebut}-{experiences.DateFin}</strong></p>
                                 <p>{experiences.description}</p>
                             </div>
                         </div>

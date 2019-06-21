@@ -12,13 +12,16 @@
     }
 }
 
+.column.is-5{
+    margin-top: 20px;
+}
+
 .column.is-3.has-text-centered.boutonMedia{
     @media screen and (max-width: 768px){
         margin: auto;
     }
 }
    
-
 @media screen and (max-width: 768px){
     #mail{
         text-align: center;

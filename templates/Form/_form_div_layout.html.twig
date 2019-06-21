@@ -8,7 +8,7 @@
     {%- endif -%}
     <div class="field">
         <label class="label"{{- form_label(form) -}}</label>
-        <div class="is-danger"{{- form_errors(form) -}}</div>
+        {{- form_errors(form) -}}
         {{- form_widget(form, widget_attr) -}}
         {{- form_help(form) -}}
     </div>
@@ -24,14 +24,20 @@
         {# Attribute "required" is not supported #}
         {%- set required = false -%}
     {%- endif -%}
-    <input class="input" type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+    {%- if errors|length > 0 -%}
+        {%- for error in errors -%}
+            <input class="input is-danger" type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+        {%- endfor -%}
+    {%- else -%}
+        <input class="input" type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+    {%- endif -%}
 {%- endblock form_widget_simple -%}
 
 
 {%- block form_errors -%}
     {%- if errors|length > 0 -%}
         {%- for error in errors -%}
-            <p class="is-danger">{{ error.message }}</p>
+            <p class="help is-danger">{{ error.message }}</p>
         {%- endfor -%}
     {%- endif -%}
 {%- endblock form_errors -%}

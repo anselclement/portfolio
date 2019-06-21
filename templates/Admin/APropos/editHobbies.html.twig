@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container" style="margin-top: 150px">
         <h1 class="title is-2">Edition</h1>
-        {{ form_start(formhobbies) }}
+        {{ form_start(formhobbies, {'attr': { 'novalidate': 'novalidate' }}) }}
             {{ form_row(formhobbies.name) }}
             {{ form_row(formhobbies.icon_name) }}
             <button class="button is-primary">Editer</button>

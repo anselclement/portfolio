@@ -19,7 +19,7 @@ export default function PortfolioAPropos(props) {
                     <h2 className="title is-2 has-text-centered">A Propos</h2>
                 </div>
                     {aPropos.map(data => (
-                        <div className="content has-text-centered">{data.content}</div>
+                        <div className="content has-text-centered" key={data.id}>{data.content}</div>
                     ))}
                 <div className="container">
                     <div className="columns">
@@ -27,7 +27,7 @@ export default function PortfolioAPropos(props) {
                             <div className="columns is-mobile">
                                 <figure className="image is-128x128" id="avatar">
                                 {aPropos.map(data => (
-                                        <img src={root + data.filename}   alt="avatar"/>
+                                        <img src={root + data.filename} key={data.id}  alt="avatar"/>
                                     ))}
                                 </figure>
                             </div>
@@ -35,7 +35,7 @@ export default function PortfolioAPropos(props) {
                         <div className="column is-5">
                             <div className="columns is-mobile">
                             {aPropos.map(data => (
-                                <div className="column" id="mail">{data.mail}</div>
+                                <div className="column" id="mail" key={data.id}>{data.mail}</div>
                             ))}
                             </div>
                             <div className="columns is-mobile">
@@ -68,8 +68,8 @@ export default function PortfolioAPropos(props) {
                             </div>
                             <div className="columns is-mobile">
                                 {hobbies.map(icon => (
-                                    <div className="column is-2 has-text-centered tooltip is-tooltip-bottom is-tooltip-info" data-tooltip={icon.name}>
-                                        <i className={fontAwesome + icon.iconName + zoomFontAwesome}></i>
+                                    <div className="column is-2 has-text-centered tooltip is-tooltip-bottom is-tooltip-info" data-tooltip={icon.name} key={icon.id}>
+                                        <i className={fontAwesome + icon.iconName + zoomFontAwesome} key={icon.id}></i>
                                     </div>
                                 ))}
                             </div>

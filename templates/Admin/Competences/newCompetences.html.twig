@@ -5,7 +5,7 @@
 {% block body %}
     <div class="container" style="margin-top: 150px">
         <h1 class="title is-2">New</h1>
-        {{ form_start(formcompetences) }}
+        {{ form_start(formcompetences, {'attr': { 'novalidate': 'novalidate' }}) }}
             {{ form_row(formcompetences.language) }}
             {{ form_row(formcompetences.percentage) }}
             {{ form_row(formcompetences.color)   }}

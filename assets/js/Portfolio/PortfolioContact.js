@@ -21,10 +21,21 @@ export default class PortfolioContact extends Component {
 
     handleFormSubmit(event){
         event.preventDefault();
-        this.state = JSON.stringify(this.state);
+        const { onNewMail } = this.props;
+
+        const data = onNewMail(
+            this.state.nom.value,
+            this.state.prenom.value,
+            this.state.mail.value,
+            this.state.message.value
+        );
+
+        console.log(data);
+
+       /* this.state = JSON.stringify(this.state);
         const data = this.state;
         console.log(data);
-        Axios.post('http://localhost:8000/contact', data);
+        Axios.post('http://localhost:8000/contact', data);*/
     }
 
     render(){
@@ -37,7 +48,7 @@ export default class PortfolioContact extends Component {
                 </div>
 
                 <div className="container">
-                    <form action="">
+                    <form onSubmit={this.handleFormSubmit}>
                         <div className="field">
                             <label className="label">Nom</label>
                             <div className="control">
@@ -68,7 +79,7 @@ export default class PortfolioContact extends Component {
                         </div>
                         <div className="field">
                             <div className="control">
-                                <button className="button is-link" type="submit" onClick={e => this.handleFormSubmit(e)}>Envoyer</button>
+                                <button className="button is-link" type="submit">Envoyer</button>
                             </div>
                         </div>
                     </form>

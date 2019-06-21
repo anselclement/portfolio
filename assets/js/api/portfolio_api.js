@@ -62,6 +62,28 @@ export function getExperiences() {
     .then(experiences => experiences)
 }
 
+/**
+ * Returns a promise where the data is the rep log collection
+ *
+ * @return {Promise<Response>}
+*/
+export function getPortfolio() {
+    return fetchJson('/portfolioJSON')
+    .then(portfolio => portfolio)
+}
+
+
+
+export function createMail(mail) {
+    return fetchJson('/contact', {
+        method: 'POST',
+        body: JSON.stringify(mail),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+}
+
 
 /*
 

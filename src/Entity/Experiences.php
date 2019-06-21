@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ExperiencesRepository")
@@ -28,6 +29,8 @@ class Experiences
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
+     * @Assert\NotBlank(
+     *      message = "Le contenu ne peut pas être vide !")
      */
     private $description;
 

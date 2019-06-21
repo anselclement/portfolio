@@ -5,13 +5,6 @@
 {% block body %}
     <div class="container">
 
-        {% if error %}
-        <div class="notification is-danger" style="margin-top: 150px">
-            <button class="delete"></button>
-            {{ error.messageKey | trans(error.messagedata, 'security') }}
-        </div>
-        {% endif %}
-
         <form action="{{ path('login') }}" method="post" style="margin-top: 150px">
             <label for="username" class="label">Nom d'utilisateur</label>
             <div class="field">
@@ -42,5 +35,13 @@
                 </p>
             </div>
         </form>
+
+        {% if error %}
+        <div class="notification is-danger" style="margin-top: 50px">
+            <button class="delete"></button>
+            {{ error.messageKey | trans(error.messagedata, 'security') }}
+        </div>
+        {% endif %}
+
     </div>
 {% endblock %}

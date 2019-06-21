@@ -19,7 +19,7 @@ export default function PortfolioCompetences(props) {
 
                 <div className="columns is-multiline is-mobile is-centered">
                     {competences.map(competences => (
-                        <div className="column is-6-mobile is-3-tablet is-2-desktop">
+                        <div className="column is-6-mobile is-3-tablet is-2-desktop" key={competences.id}>
                             <div className="box">
                             <AnimatedProgressProvider
                                 valueStart={0}
@@ -42,7 +42,7 @@ export default function PortfolioCompetences(props) {
                                 );
                                     }}
                                 </AnimatedProgressProvider>
-                                <div className="title is-4 has-text-centered">{competences.language}</div>
+                                <div className="title is-5 has-text-centered" key={competences.id}>{competences.language}</div>
                             </div>
                         </div>
                     ))}

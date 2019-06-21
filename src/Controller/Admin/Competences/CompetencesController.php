@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
 class CompetencesController extends AbstractController
 {
 
@@ -34,8 +35,7 @@ class CompetencesController extends AbstractController
      */
     public function index()
     {
-        $competences = $this->repository->findAll();//Créer sa propre méthode pour avoir un seul résultat
-
+        $competences = $this->repository->findAll();
         return $this->render('admin/Competences/Competences.html.twig', [
             'competences' => $competences
         ]);
@@ -55,7 +55,7 @@ class CompetencesController extends AbstractController
             $this->em->flush();
             $this->addFlash('succes', 'Modification bien enregistrées');
             return $this->redirectToRoute('CompetencesAdmin');
-
+            
         }
         
         return $this->render('admin/Competences/editCompetences.html.twig', [
@@ -65,9 +65,9 @@ class CompetencesController extends AbstractController
     }
 
     /**
-     *@Route ("/admin/Competences/createcompetences/{id}", name="CompetencesAdmin.createcompetences")
+     *@Route ("/admin/Competences/createcompetences/", name="CompetencesAdmin.createcompetences")
      */
-    public function newCompetences(Request $request, Competences $competences)
+    public function newCompetences(Request $request)
     {
         $competences = new Competences();
         $formcompetences = $this->createForm(CompetencesType::class, $competences);
