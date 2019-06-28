@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ColorType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
 class CompetencesType extends AbstractType
 {
@@ -16,11 +16,11 @@ class CompetencesType extends AbstractType
     {
         $builder
             ->add('language', TextType::class, [
-                'constraints' => [
-                    new NotBlank()
-                ]
+                'empty_data' => ''
             ])
-            ->add('percentage', TextType::class)
+            ->add('percentage', IntegerType::class, [
+                'empty_data' => 0
+            ])
             ->add('color', ColorType::class)
         ;
     }

@@ -22,7 +22,7 @@ class ContactController extends AbstractController
         if ($data === null) {
             throw new BadRequestHttpException('Invalid JSON');
         }else{
-            dump('yes');
+            dump($data);
         }
 
         return new Response(dump($data));

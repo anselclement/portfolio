@@ -24,18 +24,14 @@ export default class PortfolioContact extends Component {
         const { onNewMail } = this.props;
 
         const data = onNewMail(
-            this.state.nom.value,
-            this.state.prenom.value,
-            this.state.mail.value,
-            this.state.message.value
+            this.state.nom = event.target.elements.namedItem('nom').value,
+            this.state.prenom,
+            this.state.mail,
+            this.state.message
         );
 
-        console.log(data);
+        console.log(this.state.nom);
 
-       /* this.state = JSON.stringify(this.state);
-        const data = this.state;
-        console.log(data);
-        Axios.post('http://localhost:8000/contact', data);*/
     }
 
     render(){
@@ -52,8 +48,7 @@ export default class PortfolioContact extends Component {
                         <div className="field">
                             <label className="label">Nom</label>
                             <div className="control">
-                                <input className="input" id="nom" name="nom" type="text" placeholder="Votre Nom" value={this.state.nom}
-                                    onChange={e => this.setState({ nom: e.target.value })}></input>
+                                <input className="input" id="nom" name="nom" type="text" placeholder="Votre Nom"></input>
                             </div>
                         </div>
                         <div className="field">

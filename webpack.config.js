@@ -20,7 +20,6 @@ Encore
      */
     .addEntry('app', './assets/js/app.js')
     .addEntry('portfolio_react', './assets/js/portfolio_react.js')
-    .addEntry('bulma-quickview', './node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview.js')
 
     //.addEntry('page2', './assets/js/page2.js')
 

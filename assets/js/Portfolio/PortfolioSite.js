@@ -11,8 +11,6 @@ export default function PortfolioSite(props) {
         portfolio
     } = props;
 
-        
-
         return (
             <section className="section site">
                 <div className="container">
@@ -36,26 +34,29 @@ export default function PortfolioSite(props) {
                 </div>
                 <React.Fragment>
                 {portfolio.map(portfolio => (
-                <div className="test quickview" id={portfolio.id} key={portfolio.id}>                
-                    
-                            
-                            <header className="quickview-header">
-                                <p className="title">{portfolio.titre}</p>
-                                <span className="delete" data-dismiss="quickview"></span>
-                            </header>
-                            
-                            
-                            <div className="quickview-body">
-                                <div className="quickview-block">
-                                    <a href={portfolio.url}>Visiter le site !</a>
-                                    <div className="content">{portfolio.description}</div>
-                                </div>
-                            </div>    
-               
-                    
-                </div>
+                    <div className="quickview" id={portfolio.id} key={portfolio.id}>                
+                        
+                        <header className="quickview-header">
+                            <p className="title">{portfolio.titre}</p>
+                            <span className="delete" data-dismiss="quickview"></span>
+                        </header>
+                        
+                        
+                        <div className="quickview-body">
+                            <div className="quickview-block">
+                                <a href={portfolio.url}>Visiter le site !</a>
+                                {portfolio.tags.map(tags => (
+                                <span className="tag is-info" key={tags.id}>{tags.name}</span>
+                                ))}
+                                <div className="content">{portfolio.description}</div>
+                            </div>
+                        </div>    
+                
+                    </div>
                 ))}
                 </React.Fragment>
+
+                
                 
 
                 <div className="container">

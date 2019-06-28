@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Nouveau Tag' %}
+
+{% block body %}
+    <div class="container" style="margin-top: 150px">
+        <h1 class="title is-2">Nouveau Tag</h1>
+        {{ form_start(formTag, {'attr': { 'novalidate': 'novalidate' }}) }}
+            {{ form_row(formTag.name) }}
+            <button class="button is-primary">Nouveau</button>
+        {{ form_end(formTag) }}
+    </div>
+{% endblock %}

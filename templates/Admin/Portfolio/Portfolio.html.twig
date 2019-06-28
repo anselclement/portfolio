@@ -20,15 +20,19 @@
                     <th>titre</th>
                     <th>url</th>
                     <th>description</th>
+                    <th>Tags</th>
                 </tr>
                 </thead>
-                </tbody>
+                <tbody>
                 {% for portfolio in portfolio %}
                 <tr>
                     <td>{{ portfolio.imageFile }}</td>
                     <td>{{ portfolio.titre }}</td>
                     <td>{{ portfolio.url }}</td>
                     <td>{{ portfolio.description }}</td>
+                    {% for tags in portfolio.tags %}
+                        <td>{{ tags.name }}</td>
+                    {% endfor %}
                     <td><a href="{{ path('PortfolioAdmin.editportfolio', {id: portfolio.id}) }}" class="button is-primary">Edition</a></td>
                     <td>
                         <form method="post" action="{{ path('PortfolioAdmin.deleteportfolio', {id: portfolio.id}) }}">
@@ -40,9 +44,32 @@
                 {% endfor %}
                 </tbody>
             </table>
-            {% for portfolio in portfolio %}
-            <a href="{{ path('PortfolioAdmin.createportfolio', {id: portfolio.id}) }}" class="button is-primary">Nouveau Portfolio</a>
-            {% endfor %}
+            <a href="{{ path('PortfolioAdmin.createportfolio') }}" class="button is-primary">Nouveau Portfolio</a>
+
+            <table class="table">
+                <h2 class="title is-3" style="margin-top: 50px">Liste Tag</h2>
+                <thead>
+                <tr>
+                    <th>Tag</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for tag in tag %}
+                <tr>
+                    <td>{{ tag.name }}</td>
+                    <td><a href="{{ path('TagAdmin.edittag', {id: tag.id}) }}" class="button is-primary">Edition</a></td>
+                    <td>
+                        <form method="post" action="{{ path('TagAdmin.deletetag', {id: tag.id}) }}">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button  class="button is-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <a href="{{ path('TagAdmin.createtag') }}" class="button is-primary">Nouveau Tag</a>
+
         </table>
     </div>
 {% endblock %}

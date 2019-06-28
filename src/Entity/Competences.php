@@ -28,6 +28,9 @@ class Competences
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(
      *      message = "Le contenu ne peut pas être vide !")
+     * @Assert\NotEqualTo(
+     *      value = 0,
+     *      message = "Le contenu ne peut pas être vide !")
      */
     private $percentage;
 

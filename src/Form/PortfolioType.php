@@ -19,6 +19,7 @@ class PortfolioType extends AbstractType
             ->add('titre', TextType::class)
             ->add('url', TextType::class)
             ->add('description', TextareaType::class)
+            ->add('tags')
         ;
     }
 

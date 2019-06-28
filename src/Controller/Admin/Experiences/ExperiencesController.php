@@ -34,8 +34,8 @@ class ExperiencesController extends AbstractController
      */
     public function index()
     {
-        $experiences = $this->repository->findAll();//Créer sa propre méthode pour avoir un seul résultat
-
+        $experiences = $this->repository->findDateDebutDesc();
+        dump($experiences);
         return $this->render('admin/Experiences/Experiences.html.twig', [
             'experiences' => $experiences
         ]);
@@ -103,7 +103,7 @@ class ExperiencesController extends AbstractController
     public function transformFormatJson(ExperiencesRepository $ExperiencesRepository, SerializerInterface $serializer){
 
 
-        $experiences = $ExperiencesRepository->findAll();
+        $experiences = $ExperiencesRepository->findDateDebutDesc();
 
         $data = $serializer->serialize($experiences, 'json');
 

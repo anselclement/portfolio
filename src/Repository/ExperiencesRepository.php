@@ -22,19 +22,15 @@ class ExperiencesRepository extends ServiceEntityRepository
     // /**
     //  * @return Experiences[] Returns an array of Experiences objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function findDateDebutDesc()
     {
         return $this->createQueryBuilder('e')
-            ->andWhere('e.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('e.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('e.DateDebut', 'DESC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Experiences

@@ -62,12 +62,13 @@ $(document).ready(function () {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('dom');
   (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
     $notification = $delete.parentNode;
     $delete.addEventListener('click', () => {
       $notification.parentNode.removeChild($notification);
     });
   });
-
-  var quickviews = bulmaQuickview.attach()
+  var quickviews = bulmaQuickview.attach();
+  console.log(quickviews);
 });

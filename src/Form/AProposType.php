@@ -15,7 +15,9 @@ class AProposType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('content', TextareaType::class)
+            ->add('content', TextareaType::class, [
+                'empty_data' => ''
+            ])
             ->add('mail', EmailType::class)
             ->add('imageFile', FileType::class)
         ;
