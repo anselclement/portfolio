@@ -20,18 +20,15 @@ export default class PortfolioContact extends Component {
     }
 
     handleFormSubmit(event){
-        event.preventDefault();
+    
         const { onNewMail } = this.props;
 
         const data = onNewMail(
             this.state.nom = event.target.elements.namedItem('nom').value,
-            this.state.prenom,
-            this.state.mail,
-            this.state.message
+            this.state.prenom = event.target.elements.namedItem('prenom').value,
+            this.state.mail = event.target.elements.namedItem('mail').value,
+            this.state.message =event.target.elements.namedItem('message').value
         );
-
-        console.log(this.state.nom);
-
     }
 
     render(){
@@ -54,22 +51,19 @@ export default class PortfolioContact extends Component {
                         <div className="field">
                             <label className="label">Prénom</label>
                             <div className="control">
-                                <input className="input" id="prenom" name="prenom" type="text" placeholder="Votre Prénom" value={this.state.prenom}
-                                    onChange={e => this.setState({ prenom: e.target.value })}></input>
+                                <input className="input" id="prenom" name="prenom" type="text" placeholder="Votre Prénom"></input>
                             </div>
                         </div>
                         <div className="field">
                             <label className="label">Mail</label>
                             <div className="control">
-                                <input className="input" id="mail" name="mail" type="email" placeholder="Votre Mail" value={this.state.mail}
-                                    onChange={e => this.setState({ mail: e.target.value })}></input>
+                                <input className="input" id="mail" name="mail" type="email" placeholder="Votre Mail"></input>
                             </div>
                         </div>
                         <div className="field">
                             <label className="label">Message</label>
                             <div className="control">
-                                <textarea className="textarea" id="message" name="message" placeholder="Votre Message" value={this.state.message}
-                                    onChange={e => this.setState({ message: e.target.value })}></textarea>
+                                <textarea className="textarea" id="message" name="message" placeholder="Votre Message"></textarea>
                             </div>
                         </div>
                         <div className="field">

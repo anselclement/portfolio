@@ -75,6 +75,7 @@ export function getPortfolio() {
 
 
 export function createMail(mail) {
+    throw mail;
     return fetchJson('/contact', {
         method: 'POST',
         body: JSON.stringify(mail),

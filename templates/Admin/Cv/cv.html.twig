@@ -1,0 +1,12 @@
+{% block body %}
+
+        <div class="container">
+            <h1 class="title is-2">CV</h1>
+            
+            {% for apropos in apropos %}
+                {{ apropos.mail}}
+
+            {% endfor %}
+
+        </div>
+{% endblock %}
