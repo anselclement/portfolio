@@ -16,7 +16,7 @@ export default function PortfolioAPropos(props) {
         <section className="section propos">
             <div className="container">
                 <div className="content">
-                    <h2 className="title is-2 has-text-centered">A Propos</h2>
+                    <h2 id="ancreApropos" className="title is-2 has-text-centered">A Propos</h2>
                 </div>
                     {aPropos.map(data => (
                         <div className="content has-text-centered" key={data.id}>{data.content}</div>
@@ -54,9 +54,11 @@ export default function PortfolioAPropos(props) {
                                     </a>
                                 </div>
                                 <div className="column is-3 has-text-centered boutonMedia">
-                                    <button className="button is-rounded is-info">
-                                        <i className="fas fa-file-pdf"></i>
-                                    </button>
+                                    <a target="_blank" href="cv">
+                                        <button className="button is-rounded is-info">
+                                            <i className="fas fa-file-pdf"></i>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -15,7 +15,7 @@ export default function PortfolioSite(props) {
             <section className="section site">
                 <div className="container">
                     <div className="content">
-                        <h2 className="title is-2 has-text-centered">Portfolio</h2>
+                        <h2 id="ancrePortfolio" className="title is-2 has-text-centered">Portfolio</h2>
                     </div>
                 </div>
 
@@ -24,7 +24,7 @@ export default function PortfolioSite(props) {
                         {portfolio.map(portfolio => (
                             <div className="column is-12-mobile is-half-tablet is-one-third-desktop" key={portfolio.id}>
                                 <div data-show="quickview" data-target={portfolio.id}>
-                                    <figure className="image is-3by2">
+                                    <figure className="image is-5by3">
                                         <img  src={root + portfolio.filename} />
                                     </figure>
                                 </div>
@@ -37,18 +37,23 @@ export default function PortfolioSite(props) {
                     <div className="quickview" id={portfolio.id} key={portfolio.id}>                
                         
                         <header className="quickview-header">
-                            <p className="title">{portfolio.titre}</p>
+                            <p className="title is-2">{portfolio.titre}</p>
                             <span className="delete" data-dismiss="quickview"></span>
                         </header>
                         
-                        
                         <div className="quickview-body">
                             <div className="quickview-block">
-                                <a href={portfolio.url}>Visiter le site !</a>
-                                {portfolio.tags.map(tags => (
-                                <span className="tag is-info" key={tags.id}>{tags.name}</span>
-                                ))}
-                                <div className="content">{portfolio.description}</div>
+                                <section className="section">
+                                    <a className="designUrl" href={portfolio.url}>Visiter le site !</a>
+                                </section>
+                                <section className="section">
+                                    {portfolio.tags.map(tags => (
+                                    <span className="tag is-info" key={tags.id}>{tags.name}</span>
+                                    ))}
+                                </section>
+                                <section className="section">
+                                    <div className="content">{portfolio.description}</div>
+                                </section>
                             </div>
                         </div>    
                 

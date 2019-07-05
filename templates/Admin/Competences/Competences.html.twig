@@ -3,7 +3,13 @@
 {% block title 'Compétences' %}
 
 {% block body %}
-    <div class="container" style="margin-top: 150px">
+    <div class="container margetop">
+        <a href="/admin" class="button is-primary margebottom">
+            <span class="icon">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span>Retour</span>
+        </a>
         <h1 class="title is-2">Bienvenue sur la section Compétences</h1>
         {% for message in app.flashes('succes') %}
             <div class="notification is-success">
@@ -11,33 +17,40 @@
                 {{ message }}
             </div>
         {% endfor %}
-        
-        <table class="table" style="margin-top: 50px">
-                <h2 class="title is-3" style="margin-top: 50px">Liste Compétences</h2>
-                <thead>
-                <tr>
-                    <th>Language</th>
-                    <th>Pourcentage</th>
-                    <th>Couleur</th>
-                </tr>
-                </thead>
-                </tbody>
-                {% for competences in competences %}
-                <tr>
-                    <td>{{ competences.language }}</td>
-                    <td>{{ competences.percentage }}</td>
-                    <td>{{ competences.color }}</td>
-                    <td><a href="{{ path('CompetencesAdmin.editcompetences', {id: competences.id}) }}" class="button is-primary">Edition</a></td>
-                    <td>
-                        <form method="post" action="{{ path('CompetencesAdmin.deletecompetences', {id: competences.id}) }}">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button  class="button is-danger">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
-                </tbody>
-        </table>
+        <div class="panel">
+            <div class="panel-block">
+                <div class="pricing">
+                    <div class="table__wrapper">
+                        <table class="table is-fullwidth" style="margin-top: 50px">
+                                <h2 class="title is-3" style="margin-top: 50px">Liste Compétences</h2>
+                                <thead>
+                                <tr>
+                                    <th>Language</th>
+                                    <th>Pourcentage</th>
+                                    <th>Couleur</th>
+                                </tr>
+                                </thead>
+                                </tbody>
+                                {% for competences in competences %}
+                                <tr>
+                                    <td>{{ competences.language }}</td>
+                                    <td>{{ competences.percentage }}</td>
+                                    <td>{{ competences.color }}</td>
+                                    <td><a href="{{ path('CompetencesAdmin.editcompetences', {id: competences.id}) }}" class="button is-primary">Edition</a></td>
+                                    <td>
+                                        <form method="post" action="{{ path('CompetencesAdmin.deletecompetences', {id: competences.id}) }}">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button  class="button is-danger">Supprimer</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
         <a href="{{ path('CompetencesAdmin.createcompetences') }}" class="button is-primary">Nouvelle Compétences</a>
     </div>
 

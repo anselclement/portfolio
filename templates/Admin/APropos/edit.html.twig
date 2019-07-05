@@ -4,7 +4,13 @@
 {% block title 'Edition' %}
 
 {% block body %}
-    <div class="container" style="margin-top: 150px">
+    <div class="container margetop">
+        <a href="/admin/Apropos" class="button is-primary margebottom">
+            <span class="icon">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+            <span>Retour</span>
+        </a>
         <h1 class="title is-2">Edition</h1>
         {{ form_start(form, {'attr': { 'novalidate': 'novalidate' }}) }}
             {{ form_row(form.content) }}

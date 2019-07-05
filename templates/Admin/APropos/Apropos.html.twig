@@ -4,7 +4,13 @@
 
 {% block body %}
 
-        <div class="container" style="margin-top: 150px">
+        <div class="container margetop">
+            <a href="/admin" class="button is-primary margebottom">
+                <span class="icon">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>Retour</span>
+            </a>
             <h1 class="title is-2">Bienvenue sur la Section A Propos</h1>
             {% for message in app.flashes('succes') %}
             <div class="notification is-success">
@@ -14,30 +20,38 @@
             {% endfor %}
             <a href="{{ path('aProposAdmin.edition', {id: aproposId.id}) }}" class="button is-primary is-large">Edition section a Propos</a>
 
-            <table class="table" style="margin-top: 50px">
-                <h2 class="title is-3" style="margin-top: 50px">Liste icônes de loisirs</h2>
-                <thead>
-                <tr>
-                    <th>Nom</th>
-                    <th>Nom icône</th>
-                </tr>
-                </thead>
-                </tbody>
-                {% for hobbies in hobbies %}
-                <tr>
-                    <td>{{ hobbies.name }}</td>
-                    <td>{{ hobbies.iconName }}</td>
-                    <td><a href="{{ path('aProposAdmin.edithobbies', {id: hobbies.id}) }}" class="button is-primary">Edition</a></td>
-                    <td>
-                        <form method="post" action="{{ path('aProposAdmin.deletehobbies', {id: hobbies.id}) }}">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button  class="button is-danger">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+            <div class="panel">
+                <div class="panel-block">
+                    <div class="pricing">
+                        <div class="table__wrapper">
+                            <table class="table">
+                                <h2 class="title is-3" style="margin-top: 50px">Liste icônes de loisirs</h2>
+                                <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Nom icône</th>
+                                </tr>
+                                </thead>
+                                </tbody>
+                                {% for hobbies in hobbies %}
+                                <tr>
+                                    <td>{{ hobbies.name }}</td>
+                                    <td>{{ hobbies.iconName }}</td>
+                                    <td><a href="{{ path('aProposAdmin.edithobbies', {id: hobbies.id}) }}" class="button is-primary">Edition</a></td>
+                                    <td>
+                                        <form method="post" action="{{ path('aProposAdmin.deletehobbies', {id: hobbies.id}) }}">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button  class="button is-danger">Supprimer</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="{{ path('aProposAdmin.createhobbies', {id: aproposId.id}) }}" class="button is-primary">Nouveau hobbie</a>
         </div>
 {% endblock %}

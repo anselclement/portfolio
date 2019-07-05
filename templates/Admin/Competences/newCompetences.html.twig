@@ -3,7 +3,13 @@
 {% block title 'Nouvelle Compétences' %}
 
 {% block body %}
-    <div class="container" style="margin-top: 150px">
+    <div class="container margetop">
+        <a href="/admin/Competences" class="button is-primary margebottom">
+            <span class="icon">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>Retour</span>
+        </a>
         <h1 class="title is-2">New</h1>
         {{ form_start(formcompetences, {'attr': { 'novalidate': 'novalidate' }}) }}
             {{ form_row(formcompetences.language) }}

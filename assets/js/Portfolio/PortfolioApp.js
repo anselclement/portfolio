@@ -101,10 +101,11 @@ export default class PortfolioApp extends Component {
     }
 
     componentWillUnMount(){
-        this.observer.unobserve(this.targetContainerRef.current);
+        
     }
 
     handleNewMail(nom, prenom, mail, message) {
+
         const newMail = {
             nom: nom,
             prenom: prenom,
@@ -112,10 +113,18 @@ export default class PortfolioApp extends Component {
             message: message
         };
 
+        this.setState({
+            isSavingNewMail: true
+        });
+
+        const newState = {
+            isSavingNewMail: false
+        };
+
         createMail(newMail)
             .then(mail => {
                 this.setState(prevState => {
-                    const newMailSend = [...prevState.newMailSend, mail];
+                    const newMailSend = [...prevState.Mail, mail];
                     return {
                         ...newState,
                         Mail: newMailSend

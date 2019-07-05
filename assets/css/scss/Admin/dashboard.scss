@@ -1,0 +1,18 @@
+.container{
+    
+    .content{
+        ul{
+            list-style: none;
+            display: flex;
+            margin-top: 50px;
+
+            @media all and (max-width: 767px){
+                flex-direction: column;
+            }
+
+            li{
+                margin-top: 0;
+            }
+        }
+    }
+}

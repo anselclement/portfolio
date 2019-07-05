@@ -28,9 +28,12 @@ class Competences
      * @ORM\Column(type="integer")
      * @Assert\NotBlank(
      *      message = "Le contenu ne peut pas être vide !")
-     * @Assert\NotEqualTo(
-     *      value = 0,
-     *      message = "Le contenu ne peut pas être vide !")
+     * @Assert\LessThanOrEqual(
+     *     value = 100,
+     *      message = "Le chiffre doit être compris entre 0 et 100 !")
+     * @Assert\GreaterThanOrEqual(
+     *     value = 0,
+     *      message = "Le chiffre doit être compris entre 0 et 100 !")
      */
     private $percentage;
 

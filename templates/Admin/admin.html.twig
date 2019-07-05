@@ -3,13 +3,15 @@
 {% block title 'Dashboard' %}
 
 {% block body %}
-    <div class="container" style="margin-top: 150px">
+    <div class="container margetop">
         <div class="content">
             <h1>Bienvenue sur le DAHSBOARD</h1>
-            <li><a href="{{ path('aProposAdmin') }}" class="button is-primary">Section A Propos</a></li>
-            <li><a href="{{ path('CompetencesAdmin') }}" class="button is-primary">Section Compétences</a></li>
-            <li><a href="{{ path('ExperiencesAdmin') }}" class="button is-primary">Section Experiences</a></li>
-            <li><a href="{{ path('PortfolioAdmin') }}" class="button is-primary">Section Portfolio</a></li>
+            <ul>
+                <li><a href="{{ path('aProposAdmin') }}" class="button is-primary is-medium is-rounded">Section A Propos</a></li>
+                <li><a href="{{ path('CompetencesAdmin') }}" class="button is-primary is-medium is-rounded">Section Compétences</a></li>
+                <li><a href="{{ path('ExperiencesAdmin') }}" class="button is-primary is-medium is-rounded">Section Experiences</a></li>
+                <li><a href="{{ path('PortfolioAdmin') }}" class="button is-primary is-medium is-rounded">Section Portfolio</a></li>
+            </ul>
         </div>
     </div>
 {% endblock %}

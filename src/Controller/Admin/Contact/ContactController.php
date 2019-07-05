@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpFoundation\Response;
 use App\Form\ContactType;
+use Symfony\Component\Serializer\SerializerInterface;
 use Swift_Mailer;
 use Swift_Message;
 
@@ -18,10 +19,10 @@ class ContactController extends AbstractController
      * @Route("/contact", name="ContactAdmin", options={"expose" = true})
      * @Method("POST")
      */
-    public function newMail(Request $request, Swift_Mailer $mailer)
+    public function newMail(Request $request, Swift_Mailer $mailer, SerializerInterface $serializer)
     {
-/*$data = json_decode($request->getContent(), true);
-        var_dump($data);die;
+        $data = json_decode($request->getContent(), true);
+
         if ($data === null) {
             throw new BadRequestHttpException('Invalid JSON');
         }
@@ -36,23 +37,30 @@ class ContactController extends AbstractController
         }else{
 
             $message = (new Swift_Message('Nouveau Mail'))
-            ->setFrom($data->mail)
+            ->setFrom($data['mail'])
             ->setTo('clement.ansel14@gmail.com')
             ->setBody(
                 $this->renderView(
-                    'Admin/Contact/contact.html.twig',
-                    ['nom' => $data->nom,
-                     'prenom' => $data->prenom,
-                     'mail' => $data->mail,
-                     'message' => $data->message    
+                    'Admin/Contact/mail.html.twig',
+                    ['nom' => $data['nom'],
+                     'prenom' => $data['prenom'],
+                     'mail' => $data['mail'],
+                     'message' => $data['message']    
                     ]
                 ),
                 'text/html'
             );
 
         $mailer->send($message);
-        }*/
+        }
 
+        $validation = $serializer->serialize('Message bien envoyé !', 'json');
+
+        return new Response($validation,200,[
+            'Content-type' => 'application/json'
+        ]);
+
+        $this->addFlash('succes', 'Mail bien envoyé !');
        
     }
 

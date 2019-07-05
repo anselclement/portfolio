@@ -10,43 +10,47 @@
     align-items: center;
     perspective: 1000px;
     perspective-origin: center;
-}
 
-.intro-overlay{
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: .60;
-    position: absolute;
-}
+    .intro-overlay{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        opacity: .60;
+        position: absolute;
+    }
 
-#test.container{
-    position: absolute;
-}
+    #zoom{
+        animation-name: zoomin;
+        animation-duration: 4s;
 
-#zoom{
-    animation-name: zoomin;
-    animation-duration: 4s;
-}
+        .title.is-1{
+            color: white;
+        }
 
-@keyframes zoomin {
-    0% {transform: translateZ(-5000px)}
-    100% {transform: translateZ(0px)}
-}
+        @media all and (max-width: 767px){
 
-.title.is-1{
-    color: white;
-}
+            .title.is-1{
+                font-size: 2rem;
+            }
+        }
 
-.button.is-outlined.is-link.is-large {
-    color: white !important;
-}
-
-@media all and (max-width: 767px){
-
-    .title.is-1{
-        font-size: 2rem;
+        .button.is-outlined.is-link.is-large {
+            color: white !important;
+        }
+    }
+    
+    @keyframes zoomin {
+        0% {transform: translateZ(-5000px)}
+        100% {transform: translateZ(0px)}
     }
 }
+
+
+
+
+
+
+
+

@@ -20,7 +20,7 @@ export default class PortfolioContact extends Component {
     }
 
     handleFormSubmit(event){
-    
+        event.preventDefault();
         const { onNewMail } = this.props;
 
         const data = onNewMail(
@@ -36,9 +36,10 @@ export default class PortfolioContact extends Component {
             <section className="section contact">
                 <div className="container">
                     <div className="content">
-                        <h2 className="title is-2 has-text-centered">Contact</h2>
+                        <h2 id="ancreContact" className="title is-2 has-text-centered">Contact</h2>
                     </div>
                 </div>
+
 
                 <div className="container">
                     <form onSubmit={this.handleFormSubmit}>

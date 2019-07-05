@@ -3,7 +3,13 @@
 {% block title 'Experiences' %}
 
 {% block body %}
-    <div class="container" style="margin-top: 150px">
+    <div class="container margetop">
+        <a href="/admin" class="button is-primary margebottom">
+            <span class="icon">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>Retour</span>
+        </a>
         <h1 class="title is-2">Bienvenue sur la section Expériences</h1>
         {% for message in app.flashes('succes') %}
         <div class="notification is-success">
@@ -12,31 +18,39 @@
         </div>
         {% endfor %}
 
-        <table class="table" style="margin-top: 50px">
-                <h2 class="title is-3" style="margin-top: 50px">Liste Expériences</h2>
-                <thead>
-                <tr>
-                    <th>Période</th>
-                    <th>Description</th>
-                </tr>
-                </thead>
-                </tbody>
-                {% for experiences in experiences %}
-                <tr>
-                    <td>{{ experiences.DateDebut|date('m-Y') }}</td>
-                    <td>{{ experiences.DateFin|date('m-Y') }}</td>
-                    <td>{{ experiences.description }}</td>
-                    <td><a href="{{ path('ExperiencesAdmin.editexperiences', {id: experiences.id}) }}" class="button is-primary">Edition</a></td>
-                    <td>
-                        <form method="post" action="{{ path('ExperiencesAdmin.deleteexperiences', {id: experiences.id}) }}">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <button  class="button is-danger">Supprimer</button>
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+        <div class="panel">
+            <div class="panel-block">
+                <div class="pricing">
+                    <div class="table__wrapper">
+                        <table class="table" style="margin-top: 50px">
+                                <h2 class="title is-3" style="margin-top: 50px">Liste Expériences</h2>
+                                <thead>
+                                <tr>
+                                    <th>Période</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                </tbody>
+                                {% for experiences in experiences %}
+                                <tr>
+                                    <td>{{ experiences.DateDebut|date('m-Y') }}</td>
+                                    <td>{{ experiences.DateFin|date('m-Y') }}</td>
+                                    <td>{{ experiences.description }}</td>
+                                    <td><a href="{{ path('ExperiencesAdmin.editexperiences', {id: experiences.id}) }}" class="button is-primary">Edition</a></td>
+                                    <td>
+                                        <form method="post" action="{{ path('ExperiencesAdmin.deleteexperiences', {id: experiences.id}) }}">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button  class="button is-danger">Supprimer</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <a href="{{ path('ExperiencesAdmin.createexperiences') }}" class="button is-primary">Nouvelle Experiences</a>
     </div>
 

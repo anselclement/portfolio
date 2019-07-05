@@ -14,7 +14,7 @@ export default function PortfolioCompetences(props) {
         <section className="section competences">
             <div className="container">
                 <div className="content">
-                    <h2 className="title is-2 has-text-centered">Compétences</h2>
+                    <h2 id="ancreCompetences" className="title is-2 has-text-centered">Compétences</h2>
                 </div>
 
                 <div className="columns is-multiline is-mobile is-centered">

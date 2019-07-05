@@ -2,20 +2,15 @@
 
 namespace App\Controller\Admin\Cv;
 
-;
 use App\Repository\HobbiesRepository;
 use App\Repository\AProposRepository;
 use App\Repository\CompetencesRepository;
 use App\Repository\ExperiencesRepository;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Serializer\SerializerInterface;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
-use Symfony\Component\Serializer\Serializer;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 
 class CvController extends AbstractController{
@@ -57,21 +52,34 @@ class CvController extends AbstractController{
      */
     public function index()
     {
-        $apropos = $this->repository->findAll();
+        $apropos = $this->repository->findAPropos();
         $allhobbies = $this->hobbiesRepository->findAll();
         $competences = $this->competencesRepository->findAll();
         $experiences = $this->experiencesRepository->findAll();
 
-        return $this->render('admin/Cv/cv.html.twig', [
+
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+
+        $dompdf = new Dompdf($pdfOptions);
+
+        $html = $this->renderView('admin/Cv/cv.html.twig', [
             'apropos' => $apropos,
             'hobbies' => $allhobbies,
             'competences' => $competences,
-            'experiences' => $experiences
+            'experiences' => $experiences,
+        ]);
+
+        $html .= '<link type="text/css" media="dompdf" href="/assets/css/scss/Admin/pdf.css" rel="stylesheet" />';
+
+        $dompdf->loadHtml($html);
+
+        $dompdf->setPaper('A4', 'portrait');
+
+        $dompdf->render();
+
+        $dompdf->stream("cv.pdf", [
+            "Attachment" => false
         ]);
     }
-
-    public function transformToPDF(){
-
-    }
-
 }

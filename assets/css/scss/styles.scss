@@ -4,7 +4,8 @@
 @import "menuNavigation.scss";
 @import "AProposSection.scss";
 @import "CompetencesSection.scss";
-@import "AproposSite.scss";
+@import "Admin/dashboard.scss";
+@import "portfolioSection.scss";
 @import "../../../node_modules/bulma/bulma.sass";
 @import "../../../node_modules/react-circular-progressbar/dist/styles.css";
 @import '../../../node_modules/bulma-extensions/bulma-tooltip/dist/css/bulma-tooltip.sass';
@@ -30,4 +31,28 @@
 
 .section {
     padding: 2rem 1.5rem;
+}
+
+.margetop{
+    margin-top: 150px;
+}
+
+.margebottom{
+    margin-bottom: 20px;
+}
+
+.table__wrapper {
+    overflow-x: auto;
+}
+
+.pricing{
+    width: 100%;
+}
+
+ul li {
+    margin: 20px;
+}
+
+ul li:hover{
+    cursor: pointer;
 }
