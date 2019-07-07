@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Axios from 'axios';
-
-
-
 
 export default class PortfolioContact extends Component {
 
@@ -29,6 +24,11 @@ export default class PortfolioContact extends Component {
             this.state.mail = event.target.elements.namedItem('mail').value,
             this.state.message =event.target.elements.namedItem('message').value
         );
+    }
+
+    handleSubmit(event){
+        alert('Le mail à bien été envoyé !');
+        event.preventDefault();
     }
 
     render(){

@@ -70,7 +70,7 @@ class CvController extends AbstractController{
             'experiences' => $experiences,
         ]);
 
-        $html .= '<link type="text/css" media="dompdf" href="/assets/css/scss/Admin/pdf.css" rel="stylesheet" />';
+        $dompdf->setBasePath(realpath('/public/build/css/'));
 
         $dompdf->loadHtml($html);
 

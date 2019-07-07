@@ -55,13 +55,11 @@ class ContactController extends AbstractController
         }
 
         $validation = $serializer->serialize('Message bien envoyé !', 'json');
-
-        return new Response($validation,200,[
+        
+        return new Response($validation, 200, [
             'Content-type' => 'application/json'
         ]);
 
-        $this->addFlash('succes', 'Mail bien envoyé !');
-       
     }
 
 }
