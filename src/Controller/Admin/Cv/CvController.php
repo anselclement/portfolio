@@ -70,7 +70,7 @@ class CvController extends AbstractController{
             'experiences' => $experiences,
         ]);
 
-        $dompdf->setBasePath(realpath('build/css/'));
+        $dompdf->setBasePath(realpath('build/'));
 
         $dompdf->loadHtml($html);
 
