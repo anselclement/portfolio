@@ -7,6 +7,7 @@ use App\Repository\AProposRepository;
 use App\Repository\CompetencesRepository;
 use App\Repository\ExperiencesRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Dompdf\Dompdf;
