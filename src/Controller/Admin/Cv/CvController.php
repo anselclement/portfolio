@@ -78,8 +78,6 @@ class CvController extends AbstractController{
 
         $dompdf->render();
 
-        $dompdf->stream("cv.pdf", [
-            "Attachment" => false
-        ]);
+        return new Response($dompdf->stream());
     }
 }

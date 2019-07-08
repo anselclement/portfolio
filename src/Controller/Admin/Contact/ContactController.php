@@ -41,7 +41,7 @@ class ContactController extends AbstractController
             ->setTo('clement.ansel14@gmail.com')
             ->setBody(
                 $this->renderView(
-                    'Admin/Contact/mail.html.twig',
+                    'admin/Contact/mail.html.twig',
                     ['nom' => $data['nom'],
                      'prenom' => $data['prenom'],
                      'mail' => $data['mail'],
