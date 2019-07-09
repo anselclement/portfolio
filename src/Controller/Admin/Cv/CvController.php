@@ -66,7 +66,7 @@ class CvController extends AbstractController{
 
         $dompdf = new Dompdf($pdfOptions);
 
-        $html = $this->renderView('admin/Cv/cv.html.twig', [
+        $html = $this->renderView('Admin/Cv/cv.html.twig', [
             'apropos' => $apropos,
             'hobbies' => $allhobbies,
             'competences' => $competences,
