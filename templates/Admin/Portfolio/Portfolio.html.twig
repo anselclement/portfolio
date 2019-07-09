@@ -29,7 +29,6 @@
                                     <th>image</th>
                                     <th>titre</th>
                                     <th>url</th>
-                                    <th>Tags</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -38,9 +37,6 @@
                                     <td>{{ portfolio.imageFile }}</td>
                                     <td>{{ portfolio.titre }}</td>
                                     <td>{{ portfolio.url }}</td>
-                                    {% for tags in portfolio.tags %}
-                                        <td>{{ tags.name }}</td>
-                                    {% endfor %}
                                     <td><a href="{{ path('PortfolioAdmin.editportfolio', {id: portfolio.id}) }}" class="button is-primary">Edition</a></td>
                                     <td>
                                         <form method="post" action="{{ path('PortfolioAdmin.deleteportfolio', {id: portfolio.id}) }}">
