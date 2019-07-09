@@ -2,15 +2,42 @@
 <html>
     <head>
         <title>CV</title>
-        <link type="text/css" media="all" href="app.31b03fcc.css" rel="stylesheet" />
+        <link type="text/css" media="all" href="app.95dc0b2a.css" rel="stylesheet" />
     </head>
     <body>
         <div class="section">
-            <h1 class="title has-text-centered">Clément Ansel</h1>
+            <h1 class="title has-text-centered">Clément Ansel</h1><br />
             <p class="is-danger">14/08/1991</p>
             <p>{{ apropos.mail }}</p>
             <a href="https://github.com/anselclement">GitHub</a><br/>
             <a href="https://www.linkedin.com/in/cl%C3%A9ment-ansel-376584142/">LinkedIn</a><br />
+        </div>
+        <div class="section">
+            <h2 class="title has-text-centered">Loisirs et centres d'intérêt</h2><br />
+            <div class="section has-text-centered">
+                {% for hobbies in hobbies %}
+                    {{hobbies.Name}}               
+                {% endfor %}
+            </div>
+        </div>
+        <div class="section">
+            <h2 class="title has-text-centered">Compétences</h2><br />
+            <div class="section has-text-centered">
+                {% for competences in competences %}
+                    <li class="design_list">
+                        <strong class="is-uppercase">{{competences.language}} - </strong><strong>{{competences.percentage}}%</strong>
+                    </li>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="section">
+            <h2 class="title has-text-centered">Expériences/Diplômes</h2><br />
+            <div class="section has-text-centered">
+                {% for experiences in experiences %}
+                    <p><strong>{{experiences.dateDebut|date('m-Y')}} - {{experiences.dateFin|date('m-Y')}}</strong></p>
+                    <p>{{experiences.description}}</p>            
+                {% endfor %}
+            </div>
         </div>
     </body>
 </html>

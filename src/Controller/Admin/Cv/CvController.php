@@ -58,6 +58,8 @@ class CvController extends AbstractController{
         $competences = $this->competencesRepository->findAll();
         $experiences = $this->experiencesRepository->findAll();
 
+        $fontAwesome = 'fas fa-';
+
 
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
@@ -69,6 +71,7 @@ class CvController extends AbstractController{
             'hobbies' => $allhobbies,
             'competences' => $competences,
             'experiences' => $experiences,
+            'fontawesome' => $fontAwesome
         ]);
 
         $dompdf->setBasePath(realpath('build/'));
