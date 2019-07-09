@@ -35,7 +35,6 @@ class ExperiencesController extends AbstractController
     public function index()
     {
         $experiences = $this->repository->findDateDebutDesc();
-        dump($experiences);
         return $this->render('admin/Experiences/Experiences.html.twig', [
             'experiences' => $experiences
         ]);
