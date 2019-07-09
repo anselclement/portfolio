@@ -14,8 +14,18 @@ class ExperiencesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('DateDebut', DateType::class)
-            ->add('DateFin', DateType::class)
+            ->add('DateDebut', DateType::class, array(
+                'widget' => 'choice',
+                'years' => range(date('2000'), date('Y')+100),
+                'months' => range(date('m'), 12),
+                'days' => range(date('d'), 31),
+              ))
+            ->add('DateFin', DateType::class, array(
+                'widget' => 'choice',
+                'years' => range(date('Y'), date('Y')+100),
+                'months' => range(date('m'), 12),
+                'days' => range(date('d'), 31),
+              ))
             ->add('description', TextType::class)
         ;
     }
