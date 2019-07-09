@@ -17,14 +17,10 @@ class ExperiencesType extends AbstractType
             ->add('DateDebut', DateType::class, array(
                 'widget' => 'choice',
                 'years' => range(date('2000'), date('Y')+100),
-                'months' => range(date('m'), 12),
-                'days' => range(date('d'), 31),
               ))
             ->add('DateFin', DateType::class, array(
                 'widget' => 'choice',
                 'years' => range(date('2000'), date('Y')+100),
-                'months' => range(date('m'), 12),
-                'days' => range(date('d'), 31),
               ))
             ->add('description', TextType::class)
         ;
