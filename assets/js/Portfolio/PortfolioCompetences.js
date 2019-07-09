@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 //Animation
-import AnimatedProgressProvider from './AnimatedProgressProvider';
+import AnimatedProgressProvider from "./AnimatedProgressProvider";
 
 export default function PortfolioCompetences(props) {
 
@@ -18,7 +17,7 @@ export default function PortfolioCompetences(props) {
                 </div>
 
                 <div className="columns is-multiline is-mobile is-centered">
-                    {competences.map(competences => (
+                    {competences.map((competences) => (
                         <div className="column is-6-mobile is-3-tablet is-2-desktop" key={competences.id}>
                             <div className="box">
                             <AnimatedProgressProvider
@@ -52,7 +51,7 @@ export default function PortfolioCompetences(props) {
                 <div className="is-divider"></div>
             </div>
         </section>
-    )
+    );
 }
 
 

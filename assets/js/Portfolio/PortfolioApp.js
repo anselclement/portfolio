@@ -1,19 +1,11 @@
-import React, { Component, lazy, Suspense, IntersectionObserver } from 'react';
-import PropTypes from 'prop-types';
-import PortfolioAPropos from './PortfolioAPropos';
-import PortfolioCompetences from './PortfolioCompetences';
-import PortfolioExperiences from './PortfolioExperiences';
-import PortfolioContact from './PortfolioContact';
-import PortfolioSite from './PortfolioSite';
-import { getAPropos, getHobbies, getCompetences, getExperiences, createMail, getPortfolio } from '../api/portfolio_api';
-import bulmaQuickview from '../../../node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview';
-
-
-//const PortfolioAPropos = lazy(() => import('./PortfolioAPropos'));
-//const PortfolioCompetences = lazy(() => import('./PortfolioCompetences'));
-//const PortfolioExperiences = lazy(() => import('./PortfolioExperiences'));
-//const PortfolioContact = lazy(() => import('./PortfolioContact'));
-//const PortfolioSite = lazy(() => import('./PortfolioSite'));
+import React, { Component } from "react";
+import PortfolioAPropos from "./PortfolioAPropos";
+import PortfolioCompetences from "./PortfolioCompetences";
+import PortfolioExperiences from "./PortfolioExperiences";
+import PortfolioContact from "./PortfolioContact";
+import PortfolioSite from "./PortfolioSite";
+import { getAPropos, getHobbies, getCompetences, getExperiences, createMail, getPortfolio } from "../api/portfolio_api";
+import bulmaQuickview from "../../../node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview";
 
 export default class PortfolioApp extends Component {
 
@@ -34,39 +26,7 @@ export default class PortfolioApp extends Component {
         this.handleNewMail = this.handleNewMail.bind(this);
     }
 
-    /*targetContainerRef = React.createRef();
-
-    options = {
-        root: this.props.root || null,
-        rootMargin: this.props.margin || "0px",
-        threshold: this.props.threshold || 0
-    };
-
-    observer;
-
-    load = (entries) => {
-
-        const { onIntersection, continueObserving } = this.props;
-
-        if (!continueObserving && !this.state.hasIntersected){
-            const entry = 
-                entries.find(
-                    entry => entry.target === this.targetContainerRef.current
-                );
-
-            if(entry && entry.isIntersecting) {
-                this.setState({ hasIntersected: true });
-                onIntersection && onIntersection(entries);
-                this.observer.unobserve(this.targetContainerRef.current);
-            }
-        } else if (continueObserving && onIntersection) {
-            onIntersection(entries);
-        }
-    };*/
-
     componentDidMount() {
-        /*this.observer = new IntersectionObserver(this.shouldComponentUpdate, this.options);
-        this.observer.observe(this.targetContainerRef.current);*/
         getAPropos()
             .then((data) => {
                 this.setState({
@@ -123,14 +83,14 @@ export default class PortfolioApp extends Component {
 
         createMail(newMail)
             .then(mail => {
-                this.setState(prevState => {
+                this.setState((prevState) => {
                     const newMailSend = [...prevState.Mail, mail];
                     return {
                         ...newState,
                         Mail: newMailSend
                     }
                 });
-            })
+            });
     }
     
     render() {
@@ -159,7 +119,7 @@ export default class PortfolioApp extends Component {
                     onNewMail={this.handleNewMail}
                 />              
             </React.Fragment>
-        )
+        );
     }
 
 }

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 export default function PortfolioSite(props) {
 
-    const root = '../uploads/';
+    const root = "../uploads/";
 
     const {
         portfolio
@@ -18,7 +18,7 @@ export default function PortfolioSite(props) {
 
                 <div className="container">
                     <div className="columns is-multiline is-mobile is-centered">
-                        {portfolio.map(portfolio => (
+                        {portfolio.map((portfolio) => (
                             <div className="column is-12-mobile is-half-tablet is-one-third-desktop" key={portfolio.id}>
                                 <div data-show="quickview" data-target={portfolio.id}>
                                     <figure className="image is-5by3">
@@ -30,7 +30,7 @@ export default function PortfolioSite(props) {
                     </div>
                 </div>
                 <React.Fragment>
-                {portfolio.map(portfolio => (
+                {portfolio.map((portfolio) => (
                     <div className="quickview" id={portfolio.id} key={portfolio.id}>                
                         
                         <header className="quickview-header">
@@ -44,7 +44,7 @@ export default function PortfolioSite(props) {
                                     <a className="designUrl" href={portfolio.url}>Visiter le site !</a>
                                 </section>
                                 <section className="section">
-                                    {portfolio.tags.map(tags => (
+                                    {portfolio.tags.map((tags) => (
                                     <span className="tag is-info" key={tags.id}>{tags.name}</span>
                                     ))}
                                 </section>
@@ -57,9 +57,6 @@ export default function PortfolioSite(props) {
                     </div>
                 ))}
                 </React.Fragment>
-
-                
-                
 
                 <div className="container">
                     <div className="is-divider"></div>

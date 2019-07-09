@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class PortfolioContact extends Component {
 
     constructor(props){
         super(props);
         this.state = {
-            nom: '',
-            prenom: '',
-            mail: '',
-            message: ''
+            nom: "",
+            prenom: "",
+            mail: "",
+            message: ""
         }
 
         this.handleFormSubmit = this.handleFormSubmit.bind(this);

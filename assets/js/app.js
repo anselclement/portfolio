@@ -6,31 +6,31 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require('../css/scss/styles.scss');
+require("../css/scss/styles.scss");
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 const $ = require('jquery');
 
 $(document).scroll(function () {
   const navbar = $("nav.is-primary.is-fixed-top");
-  const logo = $(".logo")
+  const logo = $(".logo");
   const burger = $("#MenuIcon");
   navbar.toggleClass('scrolled', $(this).scrollTop() > navbar.height());
   if (navbar.hasClass('scrolled')) {
     logo.css({
-      width : '75px',
-      height : '75px'
+      width : "75px",
+      height : "75px"
     });
     burger.css({
-      top: '30px'
+      top: "30px"
     });
   } else {
     logo.css({
-      width : '110px',
-      height : '110px'
+      width : "110px",
+      height : "110px"
     });
     burger.css({
-      top: '50px'
+      top: "50px"
     });
   }
 });
@@ -60,7 +60,7 @@ $(document).ready(function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
      var $notification = $delete.parentNode;
     $delete.addEventListener('click', () => {

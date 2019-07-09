@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { DATE_OPTIONS } from '../config';
+import React, { Component } from "react";
+import { DATE_OPTIONS } from "../config";
 
 export default class PortfolioExperiences extends Component  {
 
@@ -20,7 +19,7 @@ export default class PortfolioExperiences extends Component  {
                     </div>
 
                     <div className="timeline is-centered">
-                        {experiences.map(experiences => experiences.DateFin === null ? (
+                        {experiences.map((experiences) => experiences.DateFin === null ? (
                                 <div className="timeline-item" key={experiences.id}>
                                 <div className="timeline-marker is-primary"></div>
                                 <div className="timeline-content">

@@ -18,7 +18,7 @@ function checkStatus(response) {
     const error = new Error(response.statusText);
     error.response = response;
 
-    throw error
+    throw error;
 }
 
 
@@ -28,8 +28,8 @@ function checkStatus(response) {
  * @return {Promise<Response>}
 */
 export function getAPropos() {
-    return fetchJson('/AproposJSON')
-    .then(data => data)
+    return fetchJson("/AproposJSON")
+    .then((data) => data);
 }
 
 /**
@@ -38,8 +38,8 @@ export function getAPropos() {
  * @return {Promise<Response>}
 */
 export function getHobbies() {
-    return fetchJson('/hobbiesJSON')
-    .then(icon => icon)
+    return fetchJson("/hobbiesJSON")
+    .then((icon) => icon);
 }
 
 /**
@@ -48,8 +48,8 @@ export function getHobbies() {
  * @return {Promise<Response>}
 */
 export function getCompetences() {
-    return fetchJson('/competencesJSON')
-    .then(competences => competences)
+    return fetchJson("/competencesJSON")
+    .then((competences) => competences);
 }
 
 /**
@@ -58,8 +58,8 @@ export function getCompetences() {
  * @return {Promise<Response>}
 */
 export function getExperiences() {
-    return fetchJson('/experiencesJSON')
-    .then(experiences => experiences)
+    return fetchJson("/experiencesJSON")
+    .then((experiences) => experiences);
 }
 
 /**
@@ -68,8 +68,8 @@ export function getExperiences() {
  * @return {Promise<Response>}
 */
 export function getPortfolio() {
-    return fetchJson('/portfolioJSON')
-    .then(portfolio => portfolio)
+    return fetchJson("/portfolioJSON")
+    .then((portfolio) => portfolio);
 }
 
 
@@ -84,22 +84,3 @@ export function createMail(mail) {
         }
     });
 }
-
-
-/*
-
-export function deleteRepLog(id) {
-    return fetchJson(`/reps/${id}`, {
-        method: 'DELETE'
-    });
-}
-
-export function createAPropos(aPropos) {
-    return fetchJson('/dashboard/Apropos', {
-        method: 'POST',
-        body: JSON.stringify(aPropos),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-}*/
