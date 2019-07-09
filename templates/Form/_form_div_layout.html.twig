@@ -48,7 +48,7 @@
         {% set required = false %}
     {%- endif -%}
     <div class="select is-multiple">
-        <select size="5" {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+        <select size="20" {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
             {%- if placeholder is not none -%}
                 <option value=""{% if required and value is empty %} selected="selected"{% endif %}>{{ placeholder != '' ? (translation_domain is same as(false) ? placeholder : placeholder|trans({}, translation_domain)) }}</option>
             {%- endif -%}
