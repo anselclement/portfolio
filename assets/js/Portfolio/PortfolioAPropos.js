@@ -40,7 +40,7 @@ export default function PortfolioAPropos(props) {
                             </div>
                             <div className="columns is-mobile">
                                 <div className="column is-3 has-text-centered boutonMedia">
-                                    <a target="_blank" href="https://www.linkedin.com/in/cl%C3%A9ment-ansel-376584142/%7Bcountry%3Dus%2C+language%3Den%7D?trk=people-guest_profile-result-card_result-card_full-click">
+                                    <a target="_blank" href="https://www.linkedin.com/in/clement-ansel-376584142/">
                                         <button className="button is-rounded is-info">
                                             <i className="fab fa-linkedin"></i>
                                         </button>
@@ -54,11 +54,13 @@ export default function PortfolioAPropos(props) {
                                     </a>
                                 </div>
                                 <div className="column is-3 has-text-centered boutonMedia">
-                                    <a target="_blank" href="cv">
-                                        <button className="button is-rounded is-info">
-                                            <i className="fas fa-file-pdf"></i>
-                                        </button>
-                                    </a>
+                                    {aPropos.map( (data) => (
+                                        <a target="_blank" href={root + data.cvfilename}>
+                                            <button className="button is-rounded is-info">
+                                                <i className="fas fa-file-pdf"></i>
+                                            </button>
+                                        </a>
+                                    ))}
                                 </div>
                             </div>
                         </div>

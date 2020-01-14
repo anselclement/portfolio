@@ -20,10 +20,12 @@ export default class PortfolioApp extends Component {
             experiences: [],
             Mail: [],
             portfolio: [],
-            hasIntersected: false
+            hasIntersected: false,
+            open: false
         };
 
         this.handleNewMail = this.handleNewMail.bind(this);
+        this.togglePanel = this.togglePanel.bind(this);
     }
 
     componentDidMount() {
@@ -92,6 +94,10 @@ export default class PortfolioApp extends Component {
                 });
             });
     }
+
+    togglePanel(e){
+        this.setState({open: !this.state.open})
+    }
     
     render() {
         return (
@@ -99,24 +105,29 @@ export default class PortfolioApp extends Component {
                 <PortfolioAPropos
                     {...this.props}
                     {...this.state}
+                    onTogglePanel={this.togglePanel}
                 />
                 <PortfolioCompetences
                     {...this.props}
                     {...this.state}
+                    onTogglePanel={this.togglePanel}
                 />
                 <PortfolioExperiences
                     {...this.props}
                     {...this.state}
+                    onTogglePanel={this.togglePanel}
                 />
                 <PortfolioSite
                     {...this.props}
                     {...this.state}
+                    onTogglePanel={this.togglePanel}
                 />
 
                 <PortfolioContact
                     {...this.props}
                     {...this.state}
                     onNewMail={this.handleNewMail}
+                    onTogglePanel={this.togglePanel}
                 />              
             </React.Fragment>
         );

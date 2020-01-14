@@ -41,7 +41,6 @@ Encore
     .enableBuildNotifications()
     .addPlugin(new CopyWebpackPlugin([
         {from:'./assets/images', to:'images'},
-        {from:'./assets/css/pdf/pdf.css', to:'css'}
     ]))
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)

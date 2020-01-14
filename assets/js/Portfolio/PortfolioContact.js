@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Collapsible from 'react-collapsible';
 
 export default class PortfolioContact extends Component {
 
@@ -33,50 +34,50 @@ export default class PortfolioContact extends Component {
 
     render(){
         return (
-            <section className="section contact">
-                <div className="container">
-                    <div className="content">
-                        <h2 id="ancreContact" className="title is-2 has-text-centered">Contact</h2>
+            <section id="ancreContact" className="section contact">
+                <Collapsible trigger="Contact"  className="title is-2 has-text-centered">
+                    <div className="container">
+                        <div className="content">
+                            <h2 className="title is-2 has-text-centered">Contact</h2>
+                        </div>
                     </div>
-                </div>
 
 
-                <div className="container">
-                    <form onSubmit={this.handleFormSubmit}>
-                        <div className="field">
-                            <label className="label">Nom</label>
-                            <div className="control">
-                                <input className="input" id="nom" name="nom" type="text" placeholder="Votre Nom"></input>
+                    <div className="container">
+                        <form onSubmit={this.handleFormSubmit}>
+                            <div className="field">
+                                <label className="label">Nom</label>
+                                <div className="control">
+                                    <input className="input" id="nom" name="nom" type="text" placeholder="Votre Nom"></input>
+                                </div>
                             </div>
-                        </div>
-                        <div className="field">
-                            <label className="label">Prénom</label>
-                            <div className="control">
-                                <input className="input" id="prenom" name="prenom" type="text" placeholder="Votre Prénom"></input>
+                            <div className="field">
+                                <label className="label">Prénom</label>
+                                <div className="control">
+                                    <input className="input" id="prenom" name="prenom" type="text" placeholder="Votre Prénom"></input>
+                                </div>
                             </div>
-                        </div>
-                        <div className="field">
-                            <label className="label">Mail</label>
-                            <div className="control">
-                                <input className="input" id="mail" name="mail" type="email" placeholder="Votre Mail"></input>
+                            <div className="field">
+                                <label className="label">Mail</label>
+                                <div className="control">
+                                    <input className="input" id="mail" name="mail" type="email" placeholder="Votre Mail"></input>
+                                </div>
                             </div>
-                        </div>
-                        <div className="field">
-                            <label className="label">Message</label>
-                            <div className="control">
-                                <textarea className="textarea" id="message" name="message" placeholder="Votre Message"></textarea>
+                            <div className="field">
+                                <label className="label">Message</label>
+                                <div className="control">
+                                    <textarea className="textarea" id="message" name="message" placeholder="Votre Message"></textarea>
+                                </div>
                             </div>
-                        </div>
-                        <div className="field">
-                            <div className="control">
-                                <button className="button is-link" type="submit">Envoyer</button>
+                            <div className="field">
+                                <div className="control">
+                                    <button className="button is-link" type="submit">Envoyer</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-
+                        </form>
+                    </div>
+                </Collapsible>
             </section>
         );
     }
-
 }

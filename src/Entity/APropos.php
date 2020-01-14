@@ -38,6 +38,21 @@ class APropos
     private $imageFile;
 
     /**
+     * @var string
+     * @ORM\Column(type="string", length=255)
+     */
+    private $cvfilename;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="apropos_cv", fileNameProperty="cvfilename")
+     * @Assert\File(
+     *      mimeTypes = {"application/pdf", "application/x-pdf"},
+     *      mimeTypesMessage = "L'extension n'est pas correct, extension .pdf seulement !")
+     */
+    private $cvFile;
+
+    /**
      * @ORM\Column(type="text")
      * @Assert\NotBlank(
      *      message = "Le contenu ne peut pas être vide !")
@@ -55,6 +70,11 @@ class APropos
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updated_at;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $cv_updated_at;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Hobbies", mappedBy="apropos")
@@ -122,6 +142,33 @@ class APropos
         return $this;
     }
 
+    public function getcvfilename(): ?string
+    {
+        return $this->cvfilename;
+    }
+
+    public function setcvfilename(?string $cvfilename): self
+    {
+        $this->cvfilename = $cvfilename;
+
+        return $this;
+    }
+
+    public function getCvFile(): ?File
+    {
+        return $this->cvFile;
+    }
+
+    public function setCvFile(File $cvFile): self
+    {
+        $this->cvFile = $cvFile;
+        if ($this->cvFile instanceof UploadedFile){
+            $this->cv_updated_at = new \DateTime('now');
+        }
+
+        return $this;
+    }
+
     public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updated_at;
@@ -130,6 +177,18 @@ class APropos
     public function setUpdatedAt(?\DateTimeInterface $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    public function getCvUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->cv_updated_at;
+    }
+
+    public function setCvUpdatedAt(?\DateTimeInterface $cv_updated_at): self
+    {
+        $this->cv_updated_at = $cv_updated_at;
 
         return $this;
     }

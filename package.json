@@ -28,6 +28,7 @@
         "jquery": "^3.4.1",
         "moment": "^2.24.0",
         "react-circular-progressbar": "^2.0.0",
+        "react-collapsible": "^2.6.2",
         "react-move": "^5.2.1",
         "react-notifications-component": "^1.1.1",
         "rsync": "^0.6.1",

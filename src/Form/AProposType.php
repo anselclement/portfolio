@@ -20,6 +20,7 @@ class AProposType extends AbstractType
             ])
             ->add('mail', EmailType::class)
             ->add('imageFile', FileType::class)
+            ->add('cvFile', FileType::class)
         ;
     }
 
