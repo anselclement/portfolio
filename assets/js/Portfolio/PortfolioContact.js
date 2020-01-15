@@ -35,14 +35,7 @@ export default class PortfolioContact extends Component {
     render(){
         return (
             <section id="ancreContact" className="section contact">
-                <Collapsible trigger="Contact"  className="title is-2 has-text-centered">
-                    <div className="container">
-                        <div className="content">
-                            <h2 className="title is-2 has-text-centered">Contact</h2>
-                        </div>
-                    </div>
-
-
+                <Collapsible trigger="Contact" triggerOpenedClassName ="title is-2 has-text-centered box" className="title is-2 has-text-centered box">
                     <div className="container">
                         <form onSubmit={this.handleFormSubmit}>
                             <div className="field">

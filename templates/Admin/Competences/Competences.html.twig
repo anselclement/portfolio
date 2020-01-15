@@ -26,16 +26,12 @@
                                 <thead>
                                 <tr>
                                     <th>Language</th>
-                                    <th>Pourcentage</th>
-                                    <th>Couleur</th>
                                 </tr>
                                 </thead>
                                 </tbody>
                                 {% for competences in competences %}
                                 <tr>
                                     <td>{{ competences.language }}</td>
-                                    <td>{{ competences.percentage }}</td>
-                                    <td>{{ competences.color }}</td>
                                     <td><a href="{{ path('CompetencesAdmin.editcompetences', {id: competences.id}) }}" class="button is-primary">Edition</a></td>
                                     <td>
                                         <form method="post" action="{{ path('CompetencesAdmin.deletecompetences', {id: competences.id}) }}">

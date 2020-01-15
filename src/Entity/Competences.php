@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CompetencesRepository")
+ * @Vich\Uploadable()
  */
 class Competences
 {
@@ -25,22 +30,25 @@ class Competences
     private $language;
 
     /**
-     * @ORM\Column(type="integer")
-     * @Assert\NotBlank(
-     *      message = "Le contenu ne peut pas être vide !")
-     * @Assert\LessThanOrEqual(
-     *     value = 100,
-     *      message = "Le chiffre doit être compris entre 0 et 100 !")
-     * @Assert\GreaterThanOrEqual(
-     *     value = 0,
-     *      message = "Le chiffre doit être compris entre 0 et 100 !")
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $percentage;
+    private $filename;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var File
+     * @Vich\UploadableField(mapping="competences_image", fileNameProperty="filename")
+     * @Assert\Image(
+     *      mimeTypesMessage = "L'image n'est pas valide!")
      */
-    private $color;
+    private $imageCompetence;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updated_at;
+
+
 
     public function getId(): ?int
     {
@@ -59,27 +67,44 @@ class Competences
         return $this;
     }
 
-    public function getPercentage(): ?int
+    public function getFilename(): ?string
     {
-        return $this->percentage;
+        return $this->filename;
     }
 
-    public function setPercentage(int $percentage): self
+    public function setFilename(?string $filename): self
     {
-        $this->percentage = $percentage;
+        $this->filename = $filename;
 
         return $this;
     }
 
-    public function getColor(): ?string
+    public function getImageCompetence(): ?File
     {
-        return $this->color;
+        return $this->imageCompetence;
     }
 
-    public function setColor(string $color): self
+    public function setImageCompetence(File $imageCompetence): self
     {
-        $this->color = $color;
+        $this->imageCompetence = $imageCompetence;
+        if ($this->imageCompetence instanceof UploadedFile){
+            $this->updated_at = new \DateTime('now');
+        }
 
         return $this;
     }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updated_at;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updated_at): self
+    {
+        $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    
 }

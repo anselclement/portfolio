@@ -81,9 +81,6 @@ export default function PortfolioAPropos(props) {
                     </div>
                 </div>
             </div>
-            <div className="container">
-                <div className="is-divider"></div>
-            </div>
         </section>
     );
 }

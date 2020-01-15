@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Collapsible from 'react-collapsible';
 import PortfolioAPropos from "./PortfolioAPropos";
 import PortfolioCompetences from "./PortfolioCompetences";
 import PortfolioExperiences from "./PortfolioExperiences";

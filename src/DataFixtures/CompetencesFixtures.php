@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\DataFixtures;
 
@@ -12,8 +12,7 @@ class CompetencesFixtures extends Fixture
     {
         $competences = new Competences();
         $competences->setLanguage('HTML5');
-        $competences->setPercentage(33);
-        $competences->setColor('blue');
+
         $manager->persist($competences);
 
         $manager->flush();

@@ -16,9 +16,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-.is-divider{
-    margin-top: 7rem;
-    margin-bottom: 0;
+.Collapsible.title.is-2.has-text-centered{
+    cursor: pointer;
+}
+
+.Collapsible__trigger.is-open.title.is-2.has-text-centered.box{
+    cursor: pointer;
 }
 
 .timeline.is-centered{
@@ -26,11 +29,12 @@
 }
 
 .columns.is-multiline.is-mobile.is-centered{
-    margin-top: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .section {
-    padding: 2rem 1.5rem;
+    padding: 1rem 1.5rem;
 }
 
 .margetop{
@@ -55,4 +59,8 @@ ul li {
 
 ul li:hover{
     cursor: pointer;
+}
+
+.timeline-item::after {
+    color: red;
 }

@@ -11,13 +11,7 @@ export default function PortfolioSite(props) {
 
         return (
             <section id="ancrePortfolio" className="section site">
-                <Collapsible trigger="Portfolio"  className="title is-2 has-text-centered">
-                    <div className="container">
-                        <div className="content">
-                            <h2 className="title is-2 has-text-centered">Portfolio</h2>
-                        </div>
-                    </div>
-
+                <Collapsible trigger="Portfolio" triggerOpenedClassName ="title is-2 has-text-centered box"  className="title is-2 has-text-centered box">
                     <div className="container">
                         <div className="columns is-multiline is-mobile is-centered">
                             {portfolio.map((portfolio) => (
@@ -60,10 +54,6 @@ export default function PortfolioSite(props) {
                     ))}
                     </React.Fragment>
                 </Collapsible>                                
-                <div className="container">
-                    <div className="is-divider"></div>
-                </div>
-
             </section>
         );
 }
