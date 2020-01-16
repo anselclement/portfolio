@@ -1,21 +1,11 @@
-.title.is-4.has-text-centered{
-    margin-top: 10px;
-}
-
-.section{
-    .title.is-2.has-text-centered{
-        @media screen and (max-width: 768px){
-            font-size: 25px;
-        }
-    }
-}
-
-.column.is-6-mobile.is-4-tablet.is-2-desktop{
-    .box{
-        .title.is-4.has-text-centered{
-            @media screen and (max-width: 768px){
-                font-size: 15px;
-            }
-        }
+.img.is-4by3{
+    img{
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background: no-repeat;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
     }
 }

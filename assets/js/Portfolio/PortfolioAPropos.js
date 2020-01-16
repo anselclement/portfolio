@@ -21,6 +21,7 @@ export default function PortfolioAPropos(props) {
                     {aPropos.map((data) => (
                         <div className="content has-text-centered" key={data.id}>{data.content}</div>
                     ))}
+
                 <div className="container">
                     <div className="columns">
                         <div className="column is-2">

@@ -1,0 +1,8 @@
+.timeline-item{
+    width: 150% !important;
+    transition: width 2s;
+}
+
+.timeline-item.expanded{
+    width: 50% !important;
+}

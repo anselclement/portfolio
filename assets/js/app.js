@@ -11,6 +11,8 @@ require("../css/scss/styles.scss");
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 const $ = require('jquery');
 
+
+
 $(document).scroll(function () {
   const navbar = $("nav.is-primary.is-fixed-top");
   const logo = $(".logo");
@@ -66,5 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $delete.addEventListener('click', () => {
       $notification.remove();
     });
+  });
+});
+
+$(document).ready(function(){
+  const test = $(".Collapsible__trigger.is-closed");
+  test.click(function(){
+    $(".timeline-item").addClass('expanded');
   });
 });
