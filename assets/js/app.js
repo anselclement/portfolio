@@ -72,8 +72,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 $(document).ready(function(){
-  const test = $(".Collapsible__trigger.is-closed");
-  test.click(function(){
+  const animExp = $(".Collapsible__trigger.is-closed.animExp");
+  /*function scrollToAnchor(aid){
+    var aTag = $('<section className="section experiences" id='+ aid +'">');
+    $('html, body').animate({scrollTop: aTag.offset().top}, 'slow');
+  }*/
+  animExp.click(function(){
     $(".timeline-item").addClass('expanded');
   });
 });

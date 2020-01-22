@@ -28,7 +28,7 @@ export default function PortfolioAPropos(props) {
                             <div className="columns is-mobile">
                                 <figure className="image is-128x128" id="avatar">
                                 {aPropos.map((data) => (
-                                        <img src={root + data.filename} key={data.id}  alt="avatar"/>
+                                        <img src={root + data.filename} key={data.id} alt="avatar"/>
                                     ))}
                                 </figure>
                             </div>
@@ -56,7 +56,7 @@ export default function PortfolioAPropos(props) {
                                 </div>
                                 <div className="column is-3 has-text-centered boutonMedia">
                                     {aPropos.map( (data) => (
-                                        <a target="_blank" href={root + data.cvfilename}>
+                                        <a target="_blank" href={root + data.cvfilename} key={data.id}>
                                             <button className="button is-rounded is-info">
                                                 <i className="fas fa-file-pdf"></i>
                                             </button>
@@ -74,7 +74,7 @@ export default function PortfolioAPropos(props) {
                             <div className="columns is-mobile">
                                 {hobbies.map((icon) => (
                                     <div className="column is-2 has-text-centered tooltip is-tooltip-bottom is-tooltip-info" data-tooltip={icon.name} key={icon.id}>
-                                        <i className={fontAwesome + icon.iconName + zoomFontAwesome} key={icon.id}></i>
+                                        <i className={fontAwesome + icon.iconName + zoomFontAwesome} ></i>
                                     </div>
                                 ))}
                             </div>

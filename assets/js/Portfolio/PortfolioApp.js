@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import Collapsible from 'react-collapsible';
 import PortfolioAPropos from "./PortfolioAPropos";
 import PortfolioCompetences from "./PortfolioCompetences";
 import PortfolioExperiences from "./PortfolioExperiences";
 import PortfolioContact from "./PortfolioContact";
 import PortfolioSite from "./PortfolioSite";
 import { getAPropos, getHobbies, getCompetences, getExperiences, createMail, getPortfolio } from "../api/portfolio_api";
-import bulmaQuickview from "../../../node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview";
+
 
 export default class PortfolioApp extends Component {
 
@@ -59,7 +58,6 @@ export default class PortfolioApp extends Component {
             this.setState({
                 portfolio:portfolio
             });
-            var quickviews = bulmaQuickview.attach();
         });
     }
 

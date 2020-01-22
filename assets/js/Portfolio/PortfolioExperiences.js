@@ -12,8 +12,8 @@ export default class PortfolioExperiences extends Component  {
         const { experiences } = this.props;
 
         return(
-            <section className="section experiences">
-                <Collapsible id="ancreExperiences" trigger="Expériences" triggerOpenedClassName ="title is-2 has-text-centered box" className="title is-2 has-text-centered box">
+            <section className="section experiences" id="ancreExperiences">
+                <Collapsible trigger="Expériences" triggerClassName="title is-2 has-text-centered box animExp"  triggerOpenedClassName ="title is-2 has-text-centered box">
                     <div className="timeline is-centered">
                         {experiences.map((experiences) => experiences.DateFin === null ? (
                                 <div className="timeline-item" key={experiences.id}>
@@ -35,6 +35,7 @@ export default class PortfolioExperiences extends Component  {
                             )
                         )}
                     </div>
+                    <div id="smartscroll"></div>
                 </Collapsible>
             </section>
         )

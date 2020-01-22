@@ -12,7 +12,7 @@ export default function PortfolioCompetences(props) {
     return(
         
         <section id="ancreCompetences" className="section competences">
-            <Collapsible  trigger="Compétences" triggerOpenedClassName ="title is-2 has-text-centered box"   className="title is-2 has-text-centered box">      
+            <Collapsible  trigger="Compétences" triggerOpenedClassName ="title is-2 has-text-centered box"   triggerClassName="title is-2 has-text-centered box">      
                 <div className="columns is-multiline is-mobile is-centered">
                     {competences.map((competences) => (
                         <div className="column is-6-mobile is-3-tablet is-2-desktop" key={competences.id}>

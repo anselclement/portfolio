@@ -11,7 +11,6 @@ class ExperiencesFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $experiences = new Experiences();
-        $experiences->setPeriod('Septembre 2018 - Juin 2019');
         $experiences->setDescription('Parcours Développeur Web - OpenClassRoom');
         $manager->persist($experiences);
 

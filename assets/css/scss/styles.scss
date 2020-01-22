@@ -17,11 +17,11 @@
 
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-.Collapsible.title.is-2.has-text-centered{
+.Collapsible__trigger.is-closed{
     cursor: pointer;
 }
 
-.Collapsible__trigger.is-open.title.is-2.has-text-centered.box{
+.Collapsible__trigger.is-open{
     cursor: pointer;
 }
 
@@ -64,4 +64,8 @@ ul li:hover{
 
 .timeline-item::after {
     color: red;
+}
+
+html{
+    scroll-behavior: smooth;
 }
