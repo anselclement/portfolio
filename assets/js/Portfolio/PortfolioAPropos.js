@@ -10,7 +10,7 @@ export default function PortfolioAPropos(props) {
         aPropos,
         hobbies
     } = props;
-
+    
     return (
         <section className="section propos">
             <div className="container">
