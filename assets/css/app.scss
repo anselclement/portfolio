@@ -1,0 +1,16 @@
+@charset "utf-8";
+@import "./scss/variable.scss";
+@import "./scss/introduction.scss";
+@import "./scss/menuNavigation.scss";
+@import "./scss/AProposSection.scss";
+@import "./scss/CompetencesSection.scss";
+@import "./scss/Admin/dashboard.scss";
+@import "./scss/portfolioSection.scss";
+@import "./scss/experiencesSection.scss";
+@import "./scss/styles.scss";
+@import "../../node_modules/bulma/bulma.sass";
+@import '../../node_modules/bulma-extensions/bulma-tooltip/dist/css/bulma-tooltip.sass';
+@import '../../node_modules/bulma-extensions/bulma-timeline/dist/css/bulma-timeline.sass';
+@import '../../node_modules/bulma-extensions/bulma-divider/dist/css/bulma-divider.sass';
+@import '../../node_modules/bulma-extensions/bulma-quickview/dist/css/bulma-quickview.sass';
+@import '../../node_modules/bulma-extensions/bulma-pageloader/dist/css/bulma-pageloader.sass';

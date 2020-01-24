@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Collapsible from 'react-collapsible';
 import { DATE_OPTIONS } from "../config";
 
 export default class PortfolioExperiences extends Component  {
@@ -13,7 +12,7 @@ export default class PortfolioExperiences extends Component  {
 
         return(
             <section className="section experiences" id="ancreExperiences">
-                <Collapsible trigger="Expériences" triggerClassName="title is-2 has-text-centered box animExp"  triggerOpenedClassName ="title is-2 has-text-centered box">
+                <h2 className="title is-2 has-text-centered box">Experiences</h2>
                     <div className="timeline is-centered">
                         {experiences.map((experiences) => experiences.DateFin === null ? (
                                 <div className="timeline-item" key={experiences.id}>
@@ -35,8 +34,6 @@ export default class PortfolioExperiences extends Component  {
                             )
                         )}
                     </div>
-                    <div id="smartscroll"></div>
-                </Collapsible>
             </section>
         )
     }

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Collapsible from 'react-collapsible';
 
 export default class PortfolioContact extends Component {
 
@@ -35,8 +34,8 @@ export default class PortfolioContact extends Component {
     render(){
         return (
             <section id="ancreContact" className="section contact">
-                <Collapsible trigger="Contact" triggerOpenedClassName ="title is-2 has-text-centered box" triggerClassName="title is-2 has-text-centered box">
-                    <div className="container">
+                <h2 className="title is-2 has-text-centered box">Contact</h2>
+                    <div className="container widthContact">
                         <form onSubmit={this.handleFormSubmit}>
                             <div className="field">
                                 <label className="label">Nom</label>
@@ -69,7 +68,6 @@ export default class PortfolioContact extends Component {
                             </div>
                         </form>
                     </div>
-                </Collapsible>
             </section>
         );
     }

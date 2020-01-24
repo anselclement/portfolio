@@ -9,3 +9,15 @@
         object-fit: cover;
     }
 }
+
+.column.is-6-mobile.is-3-tablet.is-2-desktop{
+    visibility: hidden;
+}
+
+.show{
+    visibility: visible !important;
+}
+
+.column.is-6-mobile.is-3-tablet.is-2-desktop{
+    animation-duration: 1.5s;
+}

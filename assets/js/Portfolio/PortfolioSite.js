@@ -1,5 +1,4 @@
 import React from "react";
-import Collapsible from 'react-collapsible';
 
 export default function PortfolioSite(props) {
 
@@ -11,11 +10,11 @@ export default function PortfolioSite(props) {
 
         return (
             <section id="ancrePortfolio" className="section site">
-                <Collapsible trigger="Portfolio" triggerOpenedClassName ="title is-2 has-text-centered box"  triggerClassName="title is-2 has-text-centered box">
+                <h2 className="title is-2 has-text-centered box">Portfolio</h2>
                     <div className="container">
                         <div className="columns is-multiline is-mobile is-centered">
                             {portfolio.map((portfolio) => (
-                                <div className="column is-12-mobile is-half-tablet is-one-third-desktop" key={portfolio.id}>
+                                <div className="column is-12-mobile is-half-tablet is-one-third-desktop " key={portfolio.id}>
                                     <div>
                                         <figure className="image is-5by3">
                                             <a href={'#portfolio' + portfolio.id} rel="modal:open"><img  src={root + portfolio.filename} /></a>
@@ -54,9 +53,7 @@ export default function PortfolioSite(props) {
                             </div>    
                     
                         </div>
-                    ))}
-                    
-                </Collapsible>                                
+                    ))}                               
             </section>
         );
 }

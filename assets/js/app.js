@@ -6,7 +6,7 @@
  */
 
 // any CSS you require will output into a single css file (app.css in this case)
-require("../css/scss/styles.scss");
+import '../css/app.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 const $ = require('jquery');
@@ -71,13 +71,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+
 $(document).ready(function(){
-  const animExp = $(".Collapsible__trigger.is-closed.animExp");
-  /*function scrollToAnchor(aid){
-    var aTag = $('<section className="section experiences" id='+ aid +'">');
-    $('html, body').animate({scrollTop: aTag.offset().top}, 'slow');
-  }*/
-  animExp.click(function(){
-    $(".timeline-item").addClass('expanded');
+  $(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    console.log(scroll);
+    if(scroll >= 883){
+      $('.column.is-6-mobile.is-3-tablet.is-2-desktop').addClass('show bounceIn');
+    }
+    if(scroll >= 1268){
+      $(".timeline-item").addClass('expanded');
+    }
+    if(scroll >= 2144){
+      $('.column.is-12-mobile.is-half-tablet.is-one-third-desktop').addClass('show zoomInDown');
+    }
   });
 });
+$(window).scroll();
