@@ -62,7 +62,7 @@ export default class PortfolioContact extends Component {
                                 </div>
                             </div>
                             <div className="field">
-                                <div className="control">
+                                <div className="control has-text-centered">
                                     <button className="button is-link" type="submit">Envoyer</button>
                                 </div>
                             </div>
