@@ -12,12 +12,7 @@
                 <span>Retour</span>
             </a>
             <h1 class="title is-2">Bienvenue sur la Section A Propos</h1>
-            {% for message in app.flashes('succes') %}
-            <div class="notification is-success">
-                <button class="delete"></button>
-                {{ message }}
-            </div>
-            {% endfor %}
+
             <a href="{{ path('aProposAdmin.edition', {id: aproposId.id}) }}" class="button is-primary is-large">Edition section a Propos</a>
 
             <div class="panel">

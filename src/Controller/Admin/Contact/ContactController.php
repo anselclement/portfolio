@@ -52,6 +52,9 @@ class ContactController extends AbstractController
             );
 
         $mailer->send($message);
+        if($form->isSubmitted() && $form->isValid()){
+            $this->addFlash('succes', 'votre mail a bien été envoyé !');
+        }
         }
 
         $validation = $serializer->serialize('Message bien envoyé !', 'json');

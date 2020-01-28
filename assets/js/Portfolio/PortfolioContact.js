@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Message, Form } from "semantic-ui-react";
 
 export default class PortfolioContact extends Component {
 
@@ -8,7 +9,8 @@ export default class PortfolioContact extends Component {
             nom: "",
             prenom: "",
             mail: "",
-            message: ""
+            message: "",
+            formError: false
         }
 
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -26,47 +28,37 @@ export default class PortfolioContact extends Component {
         );
     }
 
-    handleSubmit(event){
-        alert('Le mail à bien été envoyé !');
-        event.preventDefault();
-    }
+
 
     render(){
         return (
             <section id="ancreContact" className="section contact">
                 <h2 className="title is-2 has-text-centered box">Contact</h2>
                     <div className="container widthContact">
-                        <form onSubmit={this.handleFormSubmit}>
-                            <div className="field">
-                                <label className="label">Nom</label>
-                                <div className="control">
-                                    <input className="input" id="nom" name="nom" type="text" placeholder="Votre Nom"></input>
-                                </div>
-                            </div>
-                            <div className="field">
-                                <label className="label">Prénom</label>
-                                <div className="control">
-                                    <input className="input" id="prenom" name="prenom" type="text" placeholder="Votre Prénom"></input>
-                                </div>
-                            </div>
-                            <div className="field">
-                                <label className="label">Mail</label>
-                                <div className="control">
-                                    <input className="input" id="mail" name="mail" type="email" placeholder="Votre Mail"></input>
-                                </div>
-                            </div>
-                            <div className="field">
-                                <label className="label">Message</label>
-                                <div className="control">
-                                    <textarea className="textarea" id="message" name="message" placeholder="Votre Message"></textarea>
-                                </div>
-                            </div>
-                            <div className="field">
-                                <div className="control has-text-centered">
-                                    <button className="button is-link" type="submit">Envoyer</button>
-                                </div>
-                            </div>
-                        </form>
+                        <Form onSubmit={this.handleFormSubmit}>
+
+                            <Form.Input required label="Nom"  id="nom" name="nom" type="text" placeholder="Votre Nom"></Form.Input>
+
+                            <Form.Input required label="Prénom"  id="prenom" name="prenom" type="text" placeholder="Votre Prénom"></Form.Input>
+
+                            <Form.Input required label="Mail"  id="mail" name="mail" type="email" placeholder="Votre Mail"></Form.Input>
+
+                            <Form.TextArea required label="Message"  id="message" name="message" placeholder="Votre Message"></Form.TextArea>
+
+                            <Form.Button fluid  type="submit">Envoyer</Form.Button>
+
+                            {!this.state.formError ? (
+                                <Message
+                                    positive
+                                    header="Votre mail a bien été envoyé !"
+                                />
+                            ) : (
+                                <Message
+                                    negative
+                                    header="Tout les champs ne sont pas remplis !"
+                                />
+                            )}
+                        </Form>
                     </div>
             </section>
         );
