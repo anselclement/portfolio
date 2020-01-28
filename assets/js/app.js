@@ -89,3 +89,9 @@ $(document).ready(function(){
   });
 });
 $(window).scroll();
+
+$(document).ready(function(){
+  $('.button.is-link.declenchement').click(function() {
+    $('.notification.is-success.is-light').addClass('show');
+  });
+});

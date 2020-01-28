@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Icon } from 'semantic-ui-react';
 
 export default function PortfolioAPropos(props) {
 
@@ -41,14 +42,14 @@ export default function PortfolioAPropos(props) {
                             <div className="columns is-mobile">
                                 <div className="column is-3 has-text-centered boutonMedia">
                                     <a target="_blank" href="https://www.linkedin.com/in/clement-ansel-376584142/">
-                                        <button className="button is-rounded is-info">
+                                        <button className="button is-info">
                                             <i className="fab fa-linkedin"></i>
                                         </button>
                                     </a>
                                 </div>
                                 <div className="column is-3 has-text-centered boutonMedia">
                                     <a target="_blank" href="https://github.com/anselclement">
-                                        <button className="button is-rounded is-info">
+                                        <button className="button is-info">
                                             <i className="fab fa-github-square"></i>
                                         </button>
                                     </a>
@@ -56,7 +57,7 @@ export default function PortfolioAPropos(props) {
                                 <div className="column is-3 has-text-centered boutonMedia">
                                     {aPropos.map( (data) => (
                                         <a target="_blank" href={root + data.cvfilename} key={data.id}>
-                                            <button className="button is-rounded is-info">
+                                            <button className="button is-info">
                                                 <i className="fas fa-file-pdf"></i>
                                             </button>
                                         </a>
@@ -70,9 +71,9 @@ export default function PortfolioAPropos(props) {
                                     <h3 className="title is-5">Loisirs et centres d'intérêt</h3>
                                 </div>
                             </div>
-                            <div className="columns is-mobile">
+                            <div className="columns is-mobile affichage">
                                 {hobbies.map((icon) => (
-                                    <div className="column is-2 has-text-centered tooltip is-tooltip-bottom is-tooltip-info" data-tooltip={icon.name} key={icon.id}>
+                                    <div className="column is-3 has-text-centered tooltip is-tooltip-bottom is-tooltip-info" data-tooltip={icon.name} key={icon.id}>
                                         <i className={fontAwesome + icon.iconName + zoomFontAwesome} ></i>
                                     </div>
                                 ))}

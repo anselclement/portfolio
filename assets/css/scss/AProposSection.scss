@@ -36,9 +36,10 @@
     }
 }
 
-.columns.is-mobile {
+.columns.is-mobile.affichage {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
     .column.is-2.has-text-centered.tooltip.is-tooltip-bottom.is-tooltip-info{
         @media screen and (max-width: 768px){
