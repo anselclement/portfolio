@@ -80,7 +80,6 @@ export default class PortfolioContact extends Component {
                                 </div>
                             </div>
                         </form>
-                        
                     </div>
             </section>
             

@@ -65,15 +65,15 @@
                     <div id="MainMenu">
                         <div id="logobis"><img src="{{ asset('build/images/logo.png') }}" alt="logo"></div>
                         <ul class="designMenu" >
-                            <a href="/#ancrebase"><li><i class="fas fa-home"></i><div href="#" class="line"></div></li></a>                                   
-                            <a href="/#ancreApropos"><li>A propos<div href="#" class="line"></div></li></a>
-                            <a href="/#ancreCompetences"><li>Compétences<div href="#" class="line"></div></li></a>
-                            <a href="/#ancreExperiences"><li>Expériences/Diplômes<div href="#" class="line"></div></li></a>
-                            <a href="/#ancrePortfolio"><li>Portfolio<div href="#" class="line"></div></li></a>
-                            <a href="/#ancreContact"><li>Contact<div class="line"></div></li></a>
+                            <a href="/#ancrebase"><li class="menuBis"><i class="fas fa-home"></i><div href="#" class="line"></div></li></a>                                   
+                            <a href="/#ancreApropos"><li class="menuBis">A propos<div href="#" class="line"></div></li></a>
+                            <a href="/#ancreCompetences"><li class="menuBis">Compétences<div href="#" class="line"></div></li></a>
+                            <a href="/#ancreExperiences"><li class="menuBis">Expériences/Diplômes<div href="#" class="line"></div></li></a>
+                            <a href="/#ancrePortfolio"><li class="menuBis">Portfolio<div href="#" class="line"></div></li></a>
+                            <a href="/#ancreContact"><li class="menuBis">Contact<div class="line"></div></li></a>
                             {% if app.user %}
-                                <a href="{{ path('logout') }}"><li>déconnexion<div class="line"></div></li></a>
-                                <a href="/admin"><li>dashboard<div class="line"></div></li></a>
+                                <a href="{{ path('logout') }}"><li class="menuBis">déconnexion<div class="line"></div></li></a>
+                                <a href="/admin"><li class="menuBis">dashboard<div class="line"></div></li></a>
                             {% endif %}
                         </ul>
                         <div id="close"><i class="far fa-times-circle fa-3x"></i></div>
@@ -84,10 +84,17 @@
 
         {% block body %}
 
+        
         <section id="intro">
             <div id="ancrebase" class="intro-overlay"></div>
+            <div id="boxRock" class=" has-text-centered">
+                <img class="rock" data-depth="0.4" src="{{ asset('build/images/1.png') }}">
+                <img class="rock"data-depth="0.2" src="{{ asset('build/images/2.png') }}">
+                <img class="rock" data-depth="0.4" src="{{ asset('build/images/3.png') }}">
+                <img class="rock" data-depth="0.4" src="{{ asset('build/images/4.png') }}">
+            </div>
             <div class="container has-text-centered">
-                <div id="zoom">
+                <div  id="zoom">
                     <h2 class="title is-1">Clément ANSEL</h2>
                     <h3 class="title is-3">Développeur Web</h3>
                     <a href="#ancreApropos"><button class="button is-outlined is-link is-large">Découvrir</button></a>

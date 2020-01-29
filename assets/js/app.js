@@ -95,3 +95,11 @@ $(document).ready(function(){
     $('.notification.is-success.is-light').addClass('show');
   });
 });
+
+
+
+
+$(document).ready(function() {
+  var test = document.getElementById('boxRock');
+  var parallaxInstance = new Parallax(test);
+});

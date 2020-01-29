@@ -21,36 +21,52 @@
         position: absolute;
     }
 
-    #zoom{
-        animation-name: zoomin;
-        animation-duration: 4s;
+        #zoom{
+            animation-name: zoomin;
+            animation-duration: 4s;
 
-        .title.is-1, .title.is-3{
-            color: white;
-        }
+            .title.is-1, .title.is-3{
+                color: white;
+            }
 
-        @media all and (max-width: 767px){
+            @media all and (max-width: 767px){
 
-            .title.is-1{
-                font-size: 2rem;
+                .title.is-1{
+                    font-size: 2rem;
+                }
+            }
+
+            .button.is-outlined.is-link.is-large {
+                color: white !important;
             }
         }
 
-        .button.is-outlined.is-link.is-large {
-            color: white !important;
+        @keyframes zoomin {
+            0% {transform: translateZ(-2000px)}
+            100% {transform: translateZ(0px)}
         }
-    }
-    
-    @keyframes zoomin {
-        0% {transform: translateZ(-2000px)}
-        100% {transform: translateZ(0px)}
-    }
+}
+
+.button.is-outlined.is-link.is-large{
+    pointer-events: auto;
 }
 
 
 
+#boxRock{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute !important;
+    overflow: hidden;
 
-
-
-
-
+    .rock{
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute !important;
+        overflow: hidden;
+    }
+}
