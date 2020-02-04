@@ -40,7 +40,7 @@ export default class PortfolioContact extends Component {
                             <button className="delete"></button>
                             Votre mail a bien été envoyé !
                         </div>
-                        <form onSubmit={this.handleFormSubmit}>
+                        <form className="testbefore" onSubmit={this.handleFormSubmit}>
                             <div className="field">
                                 <label className="label">Nom</label>
                                 <div className="control has-icons-left">
@@ -75,7 +75,7 @@ export default class PortfolioContact extends Component {
                                 </div>
                             </div>
                             <div className="field">
-                                <div className="control">
+                                <div className="control has-text-centered">
                                     <button className="button is-link declenchement" type="submit">Envoyer</button>
                                 </div>
                             </div>

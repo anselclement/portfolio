@@ -61,3 +61,19 @@
 .container.widthContact{
     width: 50%;
 }
+
+@media all and (max-width: 1024px){
+
+    .modal{
+        margin-top: 45px;
+    }
+
+    .section.popup{
+        padding: 0;
+    }
+
+    .section.boutonSite{
+        padding: 0;
+        padding-top: 1.5rem;
+    }
+}

@@ -1,3 +1,10 @@
 .notification.is-success.is-light{
     visibility: hidden;
 }
+
+
+@media all and (max-width: 768px){
+    .container.widthContact{
+        width: 100%;
+    }
+}

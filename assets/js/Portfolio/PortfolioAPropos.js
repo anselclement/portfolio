@@ -36,7 +36,7 @@ export default function PortfolioAPropos(props) {
                         <div className="column is-5">
                             <div className="columns is-mobile">
                             {aPropos.map( (data) => (
-                                <div className="column" id="mail" key={data.id}>{data.mail}</div>
+                                <div className="column" id="adresseMail" key={data.id}>{data.mail}</div>
                             ))}
                             </div>
                             <div className="columns is-mobile">

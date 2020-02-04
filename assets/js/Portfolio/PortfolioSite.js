@@ -28,7 +28,7 @@ export default function PortfolioSite(props) {
                     {portfolio.map((portfolio) => (
                         <div id="fade" className="modal" id={'portfolio' + portfolio.id} key={portfolio.id}>                
                             <div className="container">
-                                <p className="title is-3">{portfolio.titre}</p>
+                                <p className="title is-5">{portfolio.titre}</p>
                                 <a href="#" rel ="modal:close"></a>
                             </div>
                             <div className="container">

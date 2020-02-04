@@ -92,7 +92,13 @@ $(window).scroll();
 
 $(document).ready(function(){
   $('.button.is-link.declenchement').click(function() {
-    $('.notification.is-success.is-light').addClass('show');
+    var nom = $.trim($('#nom').val());
+    var prenom = $.trim($('#prenom').val());
+    var mail = $.trim($('#mail').val());
+    var message = $.trim($('#message').val());
+      if(nom != "" && prenom != "" && mail != "" && message != ""){
+        $('.notification.is-success.is-light').addClass('show');
+      }
   });
 });
 

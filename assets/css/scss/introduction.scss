@@ -70,3 +70,17 @@
         overflow: hidden;
     }
 }
+
+
+@media all and (max-width: 1250px){
+    #boxRock{
+        display: none;
+    }
+}
+
+
+@media all and (orientation:landscape) and (max-width: 823px){
+    #zoom{
+        margin-top: 65px;
+    }
+}
